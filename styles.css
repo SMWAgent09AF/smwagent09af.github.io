@@ -1,1 +1,5 @@
+*{font-family:'Verdana','Helvetica',sans-serif;}
 p.intro{font-family:'Verdana','Helvetica',sans-serif;padding:0.5em;}
+ul.nolabel > li{list-style-type:none;margin-left:0.5em;}
+em.aside{font-size:12px;}
+span.nospam{display:none;}
