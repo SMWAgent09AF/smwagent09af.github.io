@@ -1,5 +1,27 @@
+/* General */
 *{font-family:'Verdana','Helvetica',sans-serif;}
-p.intro{font-family:'Verdana','Helvetica',sans-serif;padding:0.5em;}
+h1.body-title{letter-spacing:3px;text-align:center;}
+p.intro{padding:0.5em;}
 ul.nolabel > li{list-style-type:none;margin-left:0.5em;}
-em.aside{font-size:12px;}
+nav li.current{opacity:.6;}
+.aside{font-size:12px;}
 span.nospam{display:none;}
+p.attr{font-size:13px;font-weight:700;letter-spacing:.1em;}
+
+/* Grid */
+.grid{border:2px outset #9119;border-radius:1.5em;padding:1em;margin:0.5em;}
+
+.grid.header{grid-area:header;}
+.grid.nav{grid-area:nav;}
+.grid.quick{grid-area:quick;}
+.grid.body{grid-area:body;}
+.grid.footer{grid-area:footer}
+
+body.grid-container {
+	display: grid;
+	grid-template-areas:
+		'header header header header header'
+		'nav quick quick quick quick'
+		'nav body body body body'
+		'footer footer footer footer footer';		
+}
