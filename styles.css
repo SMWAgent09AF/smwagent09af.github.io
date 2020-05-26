@@ -1,8 +1,8 @@
 /* General */
 *{font-family:'Verdana','Helvetica',sans-serif;}
-h1.body-title{letter-spacing:3px;text-align:center;}
-p.intro{padding:0.5em;}
-ul.nolabel > li{list-style-type:none;margin-left:0.5em;}
+h1.body-title{letter-spacing:4px;text-align:center;}
+p.intro{padding-left:0.5em;}
+ul.nolabel > li{list-style-type:none;padding:2px;}
 nav li.current{opacity:.6;}
 .aside{font-size:12px;}
 span.nospam{display:none;}
