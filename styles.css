@@ -1,12 +1,61 @@
 /* General */
 *{font-family:'Verdana','Helvetica',sans-serif;}
 h1.body-title{letter-spacing:4px;text-align:center;}
+header hr{width:90%;border:1px solid #7117;border-radius:2px;}
 p.intro{padding-left:0.5em;}
 ul.nolabel > li{list-style-type:none;padding:2px;}
+nav li:nth-child(odd){background:#0211;}
 nav li.current{opacity:.6;}
 .aside{font-size:12px;}
 span.nospam{display:none;}
+span.status-check{font-size:18px;font-weight:999;color:#090;}
+code{user-select:all;background:#DDD;font-family:'Courier',monospace;font-weight:600;color:#282;}
 p.attr{font-size:13px;font-weight:700;letter-spacing:.1em;}
+#commandbox{background:#FFFA;margin:15px;border:5px outset #B559;border-radius:2em;}
+#cmdbox-summary{padding:10px;margin-left:1em;font-family:'Helvetica','Verdana',sans-serif;font-weight:bold;font-size:18px;}
+h4.cmdbox{font-family:'Helvetica','Verdana',sans-serif;font-size:16px;}
+#details-wrapper div{margin:10px;}
+#details-wrapper hr{width:85%;border:1px solid #B88;}
+h4.cmdbox ~ p{font-family:'Helvetica','Verdana',sans-serif;font-size:14px;}
+
+/* Table */
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border:1px dotted #9AB;padding:.3em;
+}
+
+th {
+	width: 1px;
+	white-space: nowrap;
+	/* Background source: https://leaverou.github.io/css3patterns/#carbon-fibre */
+	background: linear-gradient(27deg, #222 5px, transparent 5px) 0 5px,
+		linear-gradient(207deg, #222 5px, transparent 5px) 10px 0px,
+		linear-gradient(27deg, #333 5px, transparent 5px) 0px 10px,
+		linear-gradient(207deg, #333 5px, transparent 5px) 10px 5px,
+		linear-gradient(90deg, #222 10px, transparent 10px),
+		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+	color: #FFF;
+}
+
+tr:nth-child(even) {
+	background-color: white;
+	background-image: linear-gradient(45deg, #2462 25%, transparent 25%, transparent 75%, #2462 75%, #2462), 
+		linear-gradient(45deg, #2462 25%, transparent 25%, transparent 75%, #2462 75%, #2462);
+	background-size: 3px 2px;
+	background-position: 0 0, 1px 4px;
+}
+	
+
+td.center {
+	text-align:center;
+}
 
 /* Grid */
 .grid{border:2px outset #9119;border-radius:1.5em;padding:1em;margin:0.5em;}
