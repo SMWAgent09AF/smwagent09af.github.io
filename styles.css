@@ -3,6 +3,7 @@
 h1.body-title{letter-spacing:4px;text-align:center;}
 header hr{width:90%;border:1px solid #7117;border-radius:2px;}
 p.intro{padding-left:0.5em;}
+ul.nolabel{padding-left:1em;}
 ul.nolabel > li{list-style-type:none;padding:2px;}
 nav li:nth-child(odd){background:#0211;}
 nav li.current{opacity:.6;}
@@ -32,6 +33,7 @@ table, th, td {
 th {
 	width: 1px;
 	white-space: nowrap;
+	text-align:center;
 	/* Background source: https://leaverou.github.io/css3patterns/#carbon-fibre */
 	background: linear-gradient(27deg, #222 5px, transparent 5px) 0 5px,
 		linear-gradient(207deg, #222 5px, transparent 5px) 10px 0px,
@@ -61,7 +63,7 @@ td.center {
 .grid{border:2px outset #9119;border-radius:1.5em;padding:1em;margin:0.5em;}
 
 .grid.header{grid-area:header;}
-.grid.nav{grid-area:nav;}
+.grid.nav{grid-area:nav;width:15em;}
 .grid.quick{grid-area:quick;}
 .grid.body{grid-area:body;}
 .grid.footer{grid-area:footer}

@@ -10,7 +10,7 @@
 	</head>
 	<body class="grid-container">
 		<header class="grid header chathacks">
-			<h1 class="body-title">SMWAgent09AF Plus</h1>
+			<h1 class="body-title"><span style="color:red;">SMW</span><span style="color:#539;">Agent</span><span style="color:#EC1;">09AF</span> Plus</h1>
 			<hr />
 			<h2 class="pagename">Chat Hacks Information</h2>
 		</header>
@@ -22,46 +22,329 @@
 			</ul>
 		</nav>
 		<div class="grid body chathacks">
+			<em class="aside">Click on the heading of any column on the RAM table at the bottom of this page to sort it ascending, and again to sort it descending, by that column.<br />Single-click on any inline code and the code will automatically be selected so that you may copy it.</em>
 			<h3 id="info">Info</h3>
+				<p>This is a list of relevant links, a table of catered ASM snippet names, a list of helpful commands, and a table of RAM addresses for use with Chat Hacks SMW by PatCdr, streamed peroidically at <a href="https://twitch.tv/patcdr" target="_blank">twitch.tv/patcdr</a>.</p>
 			<h4 id="links">Chat Hacks links</h4>
+				<p>These official pages will explain Chat Hacks SMW much better than anybody else can:</p>
+				<p>Website: <a href="https://patcdr.net/chathacks.html" target="_blank">https://patcdr.net/chathacks.html</a></p>
+				<p>ASM / Project CARL main page: <a href="https://patcdr.net/carl" target="_blank">https://patcdr.net/carl</a></p>
+				<p>Pastebin (oldish; obsoleted by first link): <a href="https://pastebin.com/enaY5yn8" target="_blank">https://pastebin.com/enaY5yn8</a></p>
 			<h4 id="otherlinks">Other links</h4>
+				<p>Searchable RAM map (ultra helpful): <a href="https://www.smwcentral.net/?p=memorymap&amp;game=smw" rel="nofollow" target="_blank">https://www.smwcentral.net/?p=memorymap&amp;game=smw</a></p>
+				<p>Sprite data RAM: <a href="https://docs.google.com/spreadsheets/d/1YuEyTkBXl-BvXyAf6C7EPXo20CdVlbwUttp2RXHoY2U" target="_blank">https://docs.google.com/spreadsheets/d/1YuEyTkBXl-BvXyAf6C7EPXo20CdVlbwUttp2RXHoY2U</a></p>
+				<p>Sprite ID #s: <a href="https://smwspeedruns.com/Sprites" rel="nofollow" target="_blank">https://smwspeedruns.com/Sprites</a></p>
 			<h3 id="carl">Project CARL</h3>
 			<h4 id="snippets">Cool ASM snippets</h4>
+				<p>These are ASM snippets that I have used or seen the effects of and personally find fun or useful. Keep in mind that people can change or delete their code after they upload it &mdash; the descriptions I have listed here may not accurately describe the effects forever. This is <em>not</em> a replacement for PatCdr&#39;s own <a href="https://patcdr.net/carl/listing" target="_blank">automatically updated list</a>; it is simply a reduction and alphabetization of the massive list so that I can make decisions more quickly. I probably left some out, but that doesn&#39;t mean I don&#39;t like them.</p>
+				<table border="0" bordercolor="#888" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>User</th>
+							<th>User&#39;s Desc</th>
+							<th>Description/Notes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>&nbsp;aimedbills</td>
+							<td>&nbsp;perryman1138</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Shoots bullet bills at Mario&#39;s y-pos from side of screen</td>
+						</tr>
+						<tr>
+							<td>&nbsp;airjump</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;jump literally anytime</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;AntiAutoscroll</td>
+							<td>&nbsp;fiskbit</td>
+							<td>&nbsp;Scrolls opposite the direction is Mario facing</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;boosprites2</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;Sprites are boos when not being looked at</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;bsbs</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;Block snake stops when not stood on</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;CoinPoser</td>
+							<td>&nbsp;mrmeyham</td>
+							<td>&nbsp;Coins = Pose</td>
+							<td>&nbsp;See $7e13e0 below. Great for use with &quot;coinrun&quot;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;Darkness</td>
+							<td>&nbsp;fiskbit</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Brightness ($7e0dae) goes up and down repeatedly. If the code is unloaded at the wrong moment, $dae will be &quot;stuck&quot; at its most recent value.</td>
+						</tr>
+						<tr>
+							<td>&nbsp;disco_sprites</td>
+							<td>&nbsp;furyfulfawful</td>
+							<td>&nbsp;Make all sprites fallow mario like disco shells</td>
+							<td>&nbsp;recommended for use with boosprites2</td>
+						</tr>
+						<tr>
+							<td>&nbsp;Ebb</td>
+							<td>&nbsp;fiskbit</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Periodically toggles water level flag</td>
+						</tr>
+						<tr>
+							<td>&nbsp;flymetothestars</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;infinite cape flight</td>
+							<td>&nbsp;Powerup is fixed to cape</td>
+						</tr>
+						<tr>
+							<td>&nbsp;hurry</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;keeps speeding up the music</td>
+							<td>&nbsp;Plays annoying warning sfx everytime music is sped up</td>
+						</tr>
+						<tr>
+							<td>&nbsp;hwrap</td>
+							<td>&nbsp;perryman1138</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Wraps top and bottom of screen in horizontal rooms. Behaves funny in vertical rooms</td>
+						</tr>
+						<tr>
+							<td>&nbsp;LeapOnce</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;Leap, but sets vx once</td>
+							<td>&nbsp;Makes player go forward very quickly when jumping</td>
+						</tr>
+						<tr>
+							<td>&nbsp;LRDash</td>
+							<td>&nbsp;fiskbit</td>
+							<td>&nbsp;L and R give left and right dashes</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;lrmorton</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;Pressing L or R takes you to Morton&#39;s Castle</td>
+							<td>&nbsp;Wonderful troll when player expects a different L+R function. Warning displayed on HUD</td>
+						</tr>
+						<tr>
+							<td>&nbsp;oddraft</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Skull raft pauses when not stood on</td>
+						</tr>
+						<tr>
+							<td>&nbsp;oddwater</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Toggles water level flag based on player direction</td>
+						</tr>
+						<tr>
+							<td>&nbsp;oftenstar</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;Toggles star power on and off at steady intervals</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;Palette</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;Edit Palette</td>
+							<td>&nbsp;See $7f9f00 below</td>
+						</tr>
+						<tr>
+							<td>&nbsp;pbpowerup</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;Every powerup is a p-balloon</td>
+							<td>&nbsp;Includes midway points and any other changes to $19</td>
+						</tr>
+						<tr>
+							<td>&nbsp;porcusprites2</td>
+							<td>&nbsp;smwagent09af</td>
+							<td>&nbsp;snydej&#39;s boosprites2 except with porcupuffers</td>
+							<td>&nbsp;May cause sprite lag and despawn important sprites if too many sprites follow the player</td>
+						</tr>
+						<tr>
+							<td>&nbsp;r_stars</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;R button toggles star power</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;rand64</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;randomizes $64</td>
+							<td>&nbsp;See $7e0064 below</td>
+						</tr>
+						<tr>
+							<td>&nbsp;randomlag</td>
+							<td>&nbsp;furyfulfawful</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;See $7f9696 below</td>
+						</tr>
+						<tr>
+							<td>&nbsp;rdoor</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;Randomizes doors/pipes</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;ReserveRoulette</td>
+							<td>&nbsp;fiskbit</td>
+							<td>&nbsp;Shuffles the item box</td>
+							<td>&nbsp;Cycles between specific values</td>
+						</tr>
+						<tr>
+							<td>&nbsp;RHover</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;R button hovers</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;rwarpdash</td>
+							<td>&nbsp;furyfulfawful</td>
+							<td>&nbsp;player can warp in the direction of the dpad by pressing R</td>
+							<td>&nbsp;Can cause suffocation and cause tiles to visually render improperly</td>
+						</tr>
+						<tr>
+							<td>&nbsp;shells</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;gives mario a shell if he doesn&#39;t have one</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;sideexit</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;Spawns side exit sprite on current screen (?)</td>
+						</tr>
+						<tr>
+							<td>&nbsp;Sleappery</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;Combining multiple scripts into one to save slots</td>
+							<td>&nbsp;Combines slippery and leap</td>
+						</tr>
+						<tr>
+							<td>&nbsp;spawner</td>
+							<td>&nbsp;circlefriendo</td>
+							<td>&nbsp;Summons a configurable sprite&nbsp;</td>
+							<td>&nbsp;See $7f9d0a and $7f9d0b below</td>
+						</tr>
+						<tr>
+							<td>&nbsp;Spin2Win</td>
+							<td>&nbsp;fiskbit</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;All jumps are spin jumps</td>
+						</tr>
+						<tr>
+							<td>&nbsp;spread</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;dtothefourth&#39;s &quot;duplicating tiles&quot; patch</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;stickyhands</td>
+							<td>&nbsp;perryman1138</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;If player grabs an item, that item stays until snippet is unloaded, item &quot;wakes up&quot; (goombas, mechakoopas), etc.</td>
+						</tr>
+						<tr>
+							<td>&nbsp;walkout</td>
+							<td>&nbsp;snydej</td>
+							<td>&nbsp;Enables the side exit flag</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;warp</td>
+							<td>&nbsp;tjb0607</td>
+							<td>&nbsp;allows for a chat command to initiate a warp to a specific level</td>
+							<td>&nbsp;see&nbsp;<a href="https://patcdr.net/carl/asms/warp" rel="nofollow" target="_blank">https://patcdr.net/carl/asms/warp</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<em class="aside">There used to be a One Mind snippet! Where did it go?</em>
 			<h4 id="usedram">RAM addresses used by ASM</h4>
+				<p>These are RAM addresses (normally left free by vanilla SMW) that users have picked out for using with their CARL snippets. I have compiled this list in case anyone has the ability to write ASM for CARL and doesn&#39;t want to overwrite other people&#39;s free RAM. The list is mostly complete (many entries were copied and sorted from CircleFriendo&#39;s&nbsp;<a href="https://patcdr.net/carl/asms/Addresses" target="_blank">&quot;Addresses&quot; reference file</a>), but I don&#39;t know what every single snippet uses. Please let me know if you would like your addresses added to this list.</p>
+				<ul>
+					<li>$7e0060</li>
+					<li>$7e0dc3 - $7e0dc5</li>
+					<li>$7e140b</li>
+					<li>$7e1461</li>
+					<li>$7e1696</li>
+					<li>$7e18b4</li>
+					<li>$7e18b7</li>
+					<li>$7e18cd</li>
+					<li>$7e1dfd - $7e1dfe</li>
+					<li>$7fc7fc</li>
+					<li>$7f9696</li>
+					<li>$7f9d05</li>
+					<li>$7f9d0a -&nbsp;$7f9d0c</li>
+					<li>$7f9d1a</li>
+					<li>$7f9da1 -&nbsp;$7f9da3</li>
+					<li>$7f9e01 -&nbsp;$7f9e03</li>
+					<li>$7f9efe -&nbsp; $7f9f0a</li>
+					<li>$7fb000</li>
+					<li>$7fb010 - $7fb011</li>
+					<li>$7fb3b0 - $7fb3b3</li>
+					<li>$7fb3c0 - $7fb3c2</li>
+					<li>$7fb600 - $7fb606 ($7fb601 and $7fb603 are apparently unused)</li>
+					<li>$7fba00</li>
+				</ul>
 			<h3 id="commands">Helpful commands (NEW!)</h3>
 			<details id="commandbox" open>
 				<summary id="cmdbox-summary">Work in Progress</summary>
 				<div id="details-wrapper" style="padding:15px;">
 					<div id="cmdbox-emergency">
 						<h4 class="cmdbox">Emergency OW Teleport (do not abuse)</h4>
-						<p>#2 Morton's Castle: <code>!w 7e1f11 00 7e1f17 d8 7e1f18 00 7e1f19 c8 7e1f1a 00 mode b</code></p>
-						<p>Gnarly (Special world): <code>!w 7E1F11 05 7E1F17 18 7E1F18 01 7E1F19 38 7E1F1A 01 mode b</code></p>
+						<p>#1 Iggy's Castle: <code>!w 7E1F11 01 7E1F17 98 7E1F18 00 7E1F19 28 7E1F1A 00 mode b</code></p>
+						<p>#2 Morton's Castle: <code>!w 7E1F11 00 7E1F17 D8 7E1F18 00 7E1F19 C8 7E1F1A 00 mode b</code></p>
+						<p>#3 Lemmy's Castle: <code>!w 7E1F11 02 7E1F17 C8 7E1F18 00 7E1F19 28 7E1F1A 01 mode b</code></p>
+						<p>#4 Ludwig's Castle: <code>!w 7E1F11 00 7E1F17 A8 7E1F18 01 7E1F19 38 7E1F1A 00 mode b</code></p>
+						<p>Forest of Illusion 1: <code>!w 7E1F11 03 7E1F17 88 7E1F18 00 7E1F19 78 7E1F1A 01 mode b</code></p>
+						<p>#5 Roy's Castle: <code>!w 7E1F11 00 7E1F17 88 7E1F18 01 7E1F19 28 7E1F1A 01 mode b</code></p>
+						<p>#6 Wendy's Castle: <code>!w 7E1F11 00 7E1F17 C8 7E1F18 00 7E1F19 B8 7E1F1A 01 mode b</code></p>
 						<p>Valley of Bowser 1: <code>!w 7E1F11 04 7E1F17 b8 7E1F18 01 7E1F19 78 7E1F1A 00 mode b</code></p>
+						<p>#7 Larry's Castle: <code>!w 7E1F11 04 7E1F17 78 7E1F18 01 7E1F19 58 7E1F1A 00 mode b</code></p>
 						<p>Back door: <code>!w 7E1F11 04 7E1F17 98 7E1F18 01 7E1F19 38 7E1F1A 00 mode b</code></p>
+						<p>Star World 1: <code>!w 7E1F11 6 7E1F17 48 7E1F18 1 7E1F19 A8 7E1F1A 1 mode b</code></p>
+						<p>Gnarly (Special world 1): <code>!w 7E1F11 05 7E1F17 18 7E1F18 01 7E1F19 38 7E1F1A 01 mode b</code></p>
+						<p>Funky (Special world 8): <code>!w 7E1F11 05 7E1F17 38 7E1F18 01 7E1F19 18 7E1F1A 01 mode b</code></p>
+						<p class="aside">You can make your own teleport command by running SMW locally in emulators with debug options (snes9x, BizHawk, no$sns, etc) by opening RAM view, locating the above addresses in the commands and replacing their write values with the ones in your emulator.</p>
 					</div>
 					<hr />
 					<div id="cmdbox-autumn">
 						<h4 class="cmdbox">Autumn</h4>
 						<p>To turn Autumn palette and sprites off, paste <code>!w 7E1EEB 0</code>.</p>
+						<p>To turn Autumn palette and sprites on (not recommended), paste <code>!w 7E1EEB 80</code>.</p>
 					</div>
 					<hr />
 					<div id="cmdbox-level">
 						<h4 class="cmdbox">Level Functions</h4>
 						<p>If the player is stuck in a level (especially level 0/Bonus Game), pasting <code>!mode b</code> will instantly take the player back to the overworld, providing the game hasn't frozen.</p>
-						<p>Alternatively, pasting <code>!mode f</code> will restart the level from the beginning, provided that some joker hasn't changed the player's overworld position.</p>
-						<p>If you don't want to start the level over, try simply pasting <code>!end_level_timer 28</code> for the normal exit and <code>!keyhole_timer 30</code> for the secret exit. If you want to end the level in style with the regular exit and give the player a blue yoshi, paste <code>!player_mode_dispatch 8</code>. Note that none of these commands will end the Bowser fight! That is also possible with Chat Hacks, but I will leave that for a later time.</p>
+						<p>Alternatively, pasting <code>!mode f</code> will restart the level from the beginning, provided that some joker hasn't changed the player's overworld position. If that has happened, see above.</p>
+						<p>If you don't want to start the level over, try simply pasting <code>!end_level_timer 28</code> for the normal exit and <code>!keyhole_timer 30</code> for the secret exit. If you want to end the level in style with the regular exit and give the player a blue yoshi, paste <code>!player_mode_dispatch 8</code>. Note that none of these commands will end the Bowser fight! (That is also possible with Chat Hacks, but I will leave that for a later time.)</p>
 						<p>If the screen is dark for some reason unrelated to the disco spotlight in Bowser's castle (e.g. if the "darkness" ASM is unloaded at the wrong time), try pasting <code>!dae f</code>. This might fix it.</p>
 					</div>
 					<hr />
 					<div id="cmdbox-sanity">
 						<h4 class="cmdbox">Gameplay Sanity</h4>
 						<p>If the player needs some health, paste one of the following: <code>!19 1</code> for big Mario, <code>!19 2</code> for cape Mario, or <code>!19 3</code> for fire Mario.</p>
+						<p>If the player needs star invincibility for some reason, load the "starman" ASM with <code>!load starman</code>.
 					</div>
 				</div>
 			</details>
 			<h3 id="ram">RAM addresses</h3>
 			<p>Some of the addresses below were copied from a couple of the SMW RAM maps on smwcentral.net, and the rest were directly copied from the credited users while a stream was happening. The "Tested" check means that I personally know that it works (fairly) consistently. I am unsure of some of them, as they may rely on some external ASM that was already loaded, or on some other value changes that I didn't catch.</p>
-			<em class="aside">The following list was manually converted from a messy Google Keep document into Google Sites because I needed more features and less page load time, and subsequently reformatted to here through some semi-automated processes. I don't remember why I put some of this stuff in the original Keep document, but I copied it all into here anyway.<br />Click on the heading of any column on this table to sort it ascending, and again to sort it descending, by the column.</em>
+			<em class="aside">The following list was manually converted from a messy Google Keep document into Google Sites because I needed more features and less page load time, and subsequently reformatted to here through some semi-automated processes. I don't remember why I put some of this stuff in the original Keep document, but I copied it all into here anyway.</em>
 			<table id="RAMTable">
 				<thead>
 					<tr>
