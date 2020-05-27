@@ -1,13 +1,16 @@
 /* General */
 
 *{font-family:'Verdana','Helvetica',sans-serif;}
+a{color:#063;}
+a:active{color:#6B6;}
+a:visited{color:#933;}
 h1.body-title{letter-spacing:4px;text-align:center;}
 header hr{width:90%;border:1px solid #7117;border-radius:2px;}
 p.intro{padding-left:0.5em;}
 ul.nolabel{padding-left:1em;}
 ul.nolabel > li{list-style-type:none;padding:2px;}
 .nav-button{border-radius:3px;}
-.nav-button:nth-child(even){background:#EBB;}
+.nav-button:nth-child(even){background:#BEB;}
 .nav-button:nth-child(odd){background:#ACE;}
 .nav-button.current{opacity:.6;border:none;border-radius:6px;}
 .aside{font-size:12px!important;}
