@@ -360,20 +360,12 @@
 				<tbody>
 					<tr>
 						<td>$7e0012</td>
-						<td>Stripe image loader - value must be divisible by 3. Some values will crash the game, but some are fine.</td>
+						<td>Stripe image loader &mdash; value "should" be divisible by 3. Some values will crash the game, but some are fine.</td>
 						<td>Graphics</td>
 						<td><code>!12 0x3d</code></td>
 						<td>SuperMaks64</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0012/">https://smwc.me/m/smw/ram/7E0012/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
-					</tr><tr>
-						<td>$7e0016</td>
-						<td>Controller buttons being pressed: bdsSUDLR (B, X/Y, select, Start, Up, Down, Left, Right)</td>
-						<td>Misc</td>
-						<td><code>!w 0x7E0016 0x20</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0016/">https://smwc.me/m/smw/ram/7E0016/</a></td>
-						<td class="center">&nbsp;</td>
 					</tr><tr>
 						<td>$7e0019 | !powerup</td>
 						<td>Player's powerup (2 = cape 3 = flower &gt;3 = weird)</td>
@@ -423,14 +415,6 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0071/">https://smwc.me/m/smw/ram/7E0071/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e0074</td>
-						<td>Climbing flag 1</td>
-						<td>Misc</td>
-						<td><code>!75 1</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0074/">https://smwc.me/m/smw/ram/7E0074/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e0075</td>
 						<td>Mario is in water flag (reset every frame)</td>
 						<td>Fun</td>
@@ -439,21 +423,13 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0075/">https://smwc.me/m/smw/ram/7E0075/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e0077</td>
-						<td>Player is blocked in SxxMUDLR direction</td>
-						<td>Troll</td>
-						<td><code>!77 9F</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0077/">https://smwc.me/m/smw/ram/7E0077/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e0082 (linear)</td>
-						<td>Slope height</td>
+						<td>Slope height pointer</td>
 						<td>Misc</td>
-						<td><code>!wl 7e0082 aa aa aa</code></td>
+						<td><code>!wl 7e0082 34 34 34</code></td>
 						<td>Perryman1138</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0082/">https://smwc.me/m/smw/ram/7E0082/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0085 | !is_water_level</td>
 						<td>Water level flag</td>
@@ -495,30 +471,6 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0109/">https://smwc.me/m/smw/ram/7E0109/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e0680</td>
-						<td>Palette stuff?</td>
-						<td>Graphics</td>
-						<td><code>!w 7e0680 fe</code></td>
-						<td>FuryfulFawful</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0680/">https://smwc.me/m/smw/ram/7E0680/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
-						<td>$7e0680</td>
-						<td>Index to the palette updating tables, that are uploaded every frame. Expected values $00, $03, and $06</td>
-						<td>Graphics</td>
-						<td class="center">&nbsp;</td>
-						<td>Ixitxachitl</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0680/">https://smwc.me/m/smw/ram/7E0680/</a></td>
-						<td class="center"><span class="status-check">&check;</span></td>
-					</tr><tr>
-						<td>$7e0681</td>
-						<td>Palette stuff?</td>
-						<td>Graphics</td>
-						<td><code>!w 7e0681 0e</code></td>
-						<td>FuryfulFawful</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0681/">https://smwc.me/m/smw/ram/7E0681/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e0701</td>
 						<td>BG color</td>
 						<td>Graphics</td>
@@ -535,21 +487,13 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DAE/">https://smwc.me/m/smw/ram/7E0DAE/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e0db1 (multi)</td>
-						<td>Mode timer + game mode</td>
-						<td>Misc</td>
-						<td><code>!wEx 0x7E0DB1 0xCE 0x7E0100 0x13</code></td>
-						<td>unknown</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DB1/">https://smwc.me/m/smw/ram/7E0DB1/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e0dba (linear)</td>
-						<td>Yoshi color: dba = Mario, dbb = Luigi</td>
+						<td>Yoshi color (on overworld, carried into levels): $dba = Mario, $dbb = Luigi. 0x04=yellow; 0x06=blue; 0x08=red; 0x0A=green</td>
 						<td>Misc</td>
 						<td><code>!wl 7e0dba 8 8</code></td>
-						<td>N/A</td>
+						<td>SMWAgent09AF</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DBA/">https://smwc.me/m/smw/ram/7E0DBA/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0dc0</td>
 						<td>Green star block coin counter (decrements from 0x1e). When this reaches 0, the green star block in YI3 will give a 1-up instead of a coin.</td>
@@ -600,12 +544,12 @@
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13cb</td>
-						<td>When this reaches #$80, you will start an area with star power.</td>
+						<td>When this is set to 0x80 in levels, the player is automatically given star power for the normal duration. Reset every frame in levels.</td>
 						<td>Fun</td>
 						<td><code>!w 7e13cb 80</code></td>
-						<td>N/A</td>
+						<td>SMWAgent09AF</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13CB/">https://smwc.me/m/smw/ram/7E13CB/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13cc</td>
 						<td>Queued coins</td>
@@ -614,14 +558,6 @@
 						<td>N/A</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13CC/">https://smwc.me/m/smw/ram/7E13CC/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
-					</tr><tr>
-						<td>$7e13d9</td>
-						<td>A pointer to various processes running on the overworld. Also used in the level end march.</td>
-						<td>Misc</td>
-						<td><code>!w 7e13d9 0x01</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13D9/">https://smwc.me/m/smw/ram/7E13D9/</a></td>
-						<td class="center">&nbsp;</td>
 					</tr><tr>
 						<td>$7e13e0</td>
 						<td>Player's "pose", used in "CoinPoser" . See <a href="https://bin.smwcentral.net/u/15661/MarioPoses.png">https://bin.smwcentral.net/u/15661/MarioPoses.png</a> for expected values.</td>
@@ -640,7 +576,7 @@
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13f9</td>
-						<td>Behind the scenes: 01 will send him behind objects, 02 will send him behind objects and sprites, and 03 will only send him behind sprites.</td>
+						<td>Behind the scenes: 01 will send player behind objects, 02 will send player behind objects and sprites, and 03 will only send player behind sprites.</td>
 						<td>Misc</td>
 						<td><code>!w 7e13f9 02</code></td>
 						<td>N/A</td>
@@ -655,13 +591,21 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13FB/">https://smwc.me/m/smw/ram/7E13FB/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
+						<td>$7e13f3</td>
+						<td>Fake P-balloon status &mdash; player conserves horizontal momentum but is unable to move until someone sets the value back to 0.</td>
+						<td>Troll</td>
+						<td><code>!wl 7e13fe 09</code></td>
+						<td>SMWAgent09AF</td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13F3/">https://smwc.me/m/smw/ram/7E13F3/</a></td>
+						<td class="center"><span class="status-check">&check;</span></td>
+					</tr><tr>
 						<td>$7e13fd (linear)</td>
 						<td>Temporary pause and scroll screen (Effect of pressing shoulder)</td>
 						<td>Fun</td>
 						<td><code>!wl 7e13fd 01 04 00 ff</code></td>
 						<td>Perryman1138</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13FD/">https://smwc.me/m/smw/ram/7E13FD/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1403 | !is_water_current</td>
 						<td>Water/Layer 3 tide flag (0x00-0x02) (will randomly kill player in levels with layer 3 BG)</td>
@@ -671,37 +615,53 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1403/">https://smwc.me/m/smw/ram/7E1403/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
+						<td>$7e1411</td>
+						<td>Horizontal scroll enabled flag. If this is disabled, the player cannot go beyond the limits of the screen. If it was disabled and gets enabled, the level will "jump" and graphical glitches will occur.</td>
+						<td>Troll</td>
+						<td><code>!1411 0</code></td>
+						<td>SMWAgent09AF</td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1411/">https://smwc.me/m/smw/ram/7E1411/</a></td>
+						<td class="center"><span class="status-check">&check;</span></td>
+					</tr><tr>
 						<td>$7e1413</td>
 						<td>Horizontal scroll setting for Layer 2. 0x00 = none; 0x01 = constant; 0x02 = variable.</td>
-						<td>Fun</td>
+						<td>Graphics</td>
 						<td><code>!w 7e1413 02</code></td>
 						<td>SuperMaks64</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1413/">https://smwc.me/m/smw/ram/7E1413/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
+					</tr><tr>
+						<td>$7e1414</td>
+						<td>Vertical scroll setting for Layer 2. Expected values 0x00-0x03. Setting it to 0x01 in certain levels may cause weird graphical artifacts in the background.</td>
+						<td>Graphics</td>
+						<td><code>!w 7e1414 01</code></td>
+						<td>SMWAgent09AF</td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1413/">https://smwc.me/m/smw/ram/7E1413/</a></td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1419</td>
-						<td>Pipe animation effect: affects Yoshi and carried items</td>
+						<td>Pipe animation effect: affects Yoshi and carried items. Similar to "stickyhands" ASM.</td>
 						<td>Graphics</td>
-						<td><code>!w 0x7E1419 0xff</code></td>
-						<td>N/A</td>
+						<td><code>!w 0x7E1419 0x02</code></td>
+						<td>SMWAgent09AF</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1419/">https://smwc.me/m/smw/ram/7E1419/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e141a | !transition_counter</td>
-						<td># of times any room was entered after level was first entered. Will go to some other level if set to $FF.</td>
+						<td># of times any room was entered after level was first entered. Will either go to back to the first room or warp elsewhere on the next screen transition if set to $FF.</td>
 						<td>Troll</td>
 						<td><code>!141a ff</code></td>
 						<td>SMWAgent09AF</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E141A/">https://smwc.me/m/smw/ram/7E141A/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e141e</td>
-						<td>Reset each frame: 0x02: Yoshi has wings 0x01 Can shoot fireflower while on yoshi</td>
+						<td>$7e1425</td>
+						<td>Will enter bonus game flag. Only works for goal tape exits.</td>
 						<td>Fun</td>
-						<td><code>!w 0x7E141E 0x01</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E141E/">https://smwc.me/m/smw/ram/7E141E/</a></td>
-						<td class="center">&nbsp;</td>
+						<td><code>!1425 1</code></td>
+						<td>SMWAgent09AF</td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1425/">https://smwc.me/m/smw/ram/7E1425/</a></td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1434 | !keyhole_timer</td>
 						<td>Start keyhole animation and end level (expected values 0x00 or 0x30)</td>
@@ -711,16 +671,8 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1434/">https://smwc.me/m/smw/ram/7E1434/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e1460</td>
-						<td>Layer 3 V scroll direction (0x01: up 0x00: down)</td>
-						<td>Graphics</td>
-						<td><code>!w 0x7E1460 0x00</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1460/">https://smwc.me/m/smw/ram/7E1460/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e1493 | !end_level_timer</td>
-						<td>Course clear march timer (set to 0x01 for fun colors)</td>
+						<td>Course clear march timer &mdash; the lower the value, the glitchier the colors will be. Can be set before a level is entered to end that level immediately.</td>
 						<td>Help</td>
 						<td><code>!end_level_timer 1</code></td>
 						<td>N/A</td>
@@ -743,14 +695,6 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E14B6/">https://smwc.me/m/smw/ram/7E14B6/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e16e1</td>
-						<td>Bonus stomp sprite (0x10 gives 5-up); reset on ground contact. Doesn't affect actual reward(?)</td>
-						<td>Fun</td>
-						<td><code>!w 0x7E16E1 0x10</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E14E1/">https://smwc.me/m/smw/ram/7E14E1/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e185c | !disable_ground_interaction</td>
 						<td>Mario does not interact with ground/objects flag</td>
 						<td>Troll</td>
@@ -760,12 +704,12 @@
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e186b</td>
-						<td>Multi-coin block timer</td>
+						<td>Multi-coin block timer &mdash; decrements from 0xFF when a multi-coin block is hit</td>
 						<td>Fun</td>
 						<td><code>!w 0x7E186B 0xFF</code></td>
 						<td>N/A</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E186B/">https://smwc.me/m/smw/ram/7E186B/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1887 | !layer_1_shake_timer</td>
 						<td>Ground shake timer</td>
@@ -784,12 +728,12 @@
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e18c2 | !is_on_lakitu_cloud</td>
-						<td>Lakitu cloud flag</td>
+						<td>Lakitu cloud flag &mdash; reset each frame.</td>
 						<td>Fun</td>
 						<td><code>!w 0x7e18c2 0x01</code></td>
 						<td>wolfman2000</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18C2/">https://smwc.me/m/smw/ram/7E18C2/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e18e4 (multi)</td>
 						<td>Shoots player up-left, gives star power, cape, and a 3-up</td>
@@ -807,21 +751,13 @@
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18E4/">https://smwc.me/m/smw/ram/7E18E4/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
-						<td>$7e1b80</td>
-						<td>Climbing flag 2</td>
-						<td>Misc</td>
-						<td><code>!w 0x7E1B80 0x01</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1B80/">https://smwc.me/m/smw/ram/7E1B80/</a></td>
-						<td class="center">&nbsp;</td>
-					</tr><tr>
 						<td>$7e1b95</td>
-						<td>Go to Yoshi bonus (different than player_mode_dispatch)</td>
-						<td>Fun</td>
-						<td><code>!w 0x7E1B95 0x01</code></td>
-						<td>N/A</td>
+						<td>When set to 0x02, the player will go to a Yoshi bonus on the next screen transition/level load. This will not beat the level &mdash; try <code>!player_mode_dispatch 8</code> if you want to progress.</td>
+						<td>Troll</td>
+						<td><code>!w 0x7E1B95 0x02</code></td>
+						<td>SMWAgent09AF</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1B95/">https://smwc.me/m/smw/ram/7E1B95/</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1ba0</td>
 						<td>Bowser head shake on OW</td>
@@ -870,14 +806,6 @@
 						<td>SuperMaks64</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1F27/">https://smwc.me/m/smw/ram/7E1F27/</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
-					</tr><tr>
-						<td>$7e1f2e</td>
-						<td># of levels beat</td>
-						<td>Misc</td>
-						<td><code>!w 0x7E1F2E 0xFF</code></td>
-						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1F2E/">https://smwc.me/m/smw/ram/7E1F2E/</a></td>
-						<td class="center">&nbsp;</td>
 					</tr><tr>
 						<td>$7f9696</td>
 						<td>Degree to which "randomlag" ASM lags the game</td>
