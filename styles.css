@@ -1,6 +1,27 @@
+/* Pseudo Responsive */
+
+body {
+	margin: auto;
+}
+
+body > * {
+	min-width: 60%;
+}
+
+body > .chathacks {
+	min-width: 90%;
+	max-width: 100%;
+}
+
 /* General */
 
-*{font-family:'Verdana','Helvetica',sans-serif;}
+*{font-family:'Verdana','Helvetica',sans-serif;font-size:15px;}
+h1,h1 * {font-size:24px;}
+h2,h2 * {font-size:20px;}
+h3,h3 * {font-size:18px;}
+h4,h4 * {font-size:17px;}
+h5,h5 * {font-size:16px;font-weight:bold;}
+h6,h6 * {font-size:14px;font-weight:bold;}
 a{color:#063;}
 a:active{color:#6B6;}
 a:visited{color:#933;}
@@ -13,13 +34,13 @@ ul.nolabel > li{list-style-type:none;padding:2px;}
 .nav-button:nth-child(even){background:#BEB;}
 .nav-button:nth-child(odd){background:#ACE;}
 .nav-button.current{opacity:.6;border:none;border-radius:6px;}
-.aside{font-size:12px!important;}
+.aside{font-size:11px!important;}
 span.nospam{display:none;}
-span.status-check{font-size:18px;font-weight:999;color:#090;}
+span.status-check{font-size:16px;font-weight:999;color:#090;}
 code{user-select:all;background:#DDD;font-family:'Courier',monospace;font-weight:600;color:#282;}
 p.attr{font-size:12px;font-weight:700;letter-spacing:.1em;}
 #commandbox{background:#FFFA;margin:15px;border:5px outset #B559;border-radius:2em;}
-#cmdbox-summary{padding:10px;margin-left:1em;font-family:'Helvetica','Verdana',sans-serif;font-weight:bold;font-size:18px;}
+#cmdbox-summary{padding:10px;margin-left:1em;font-family:'Helvetica','Verdana',sans-serif;font-weight:bold;font-size:14px;}
 h4.cmdbox{font-family:'Helvetica','Verdana',sans-serif;font-size:16px;}
 #details-wrapper div{margin:10px;}
 #details-wrapper hr{width:85%;border:1px solid #B88;}
@@ -32,13 +53,22 @@ table {
 	border-collapse: collapse;
 }
 
+table * {
+
+	word-wrap: break-word;
+	font-size: 14px;
+}
+
 table, th, td {
-	border:1px dotted #9AB;padding:.3em;
+	border:1px dotted #9AB;
+	padding:.2em;
+}
+
+th, td {
+	max-width: 15%;
 }
 
 th {
-	width: 1px;
-	white-space: nowrap;
 	text-align:center;
 	/* Background source: https://leaverou.github.io/css3patterns/#carbon-fibre */
 	background: linear-gradient(27deg, #222 5px, transparent 5px) 0 5px,
@@ -53,19 +83,22 @@ th {
 }
 
 tr:nth-child(even) {
-	background-color: white;
+	background-color: #EFEFEF;
 	background-image: linear-gradient(45deg, #2462 25%, transparent 25%, transparent 75%, #2462 75%, #2462), 
 		linear-gradient(45deg, #2462 25%, transparent 25%, transparent 75%, #2462 75%, #2462);
 	background-size: 3px 2px;
 	background-position: 0 0, 1px 4px;
 }
-	
 
-td.center {
-	text-align:center;
+tr:nth-child(odd) {
+	background-color: #FFF;
 }
 
-/* Grid */
+td.center {
+	text-align: center;
+}
+
+/* Grid/Flexbox */
 
 .grid{border:2px outset #9119;border-radius:1.5em;padding:1em;margin:0.5em;}
 
@@ -76,10 +109,8 @@ td.center {
 .grid.footer{grid-area:footer}
 
 body.grid-container {
-	display: grid;
-	grid-template-areas:
-		'header header'
-		'nav quick'
-		'body body'
-		'footer footer';		
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }

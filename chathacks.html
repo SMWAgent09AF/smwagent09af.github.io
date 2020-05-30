@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="author" content="SMWAgent09AF">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="styles.css">
 		<title>Chat Hacks Information | SMWAgent09AF Plus</title>
 	</head>
-	<body class="grid-container">
+	<body class="grid-container" style="width:80%;">
 		<header class="grid header chathacks">
 			<h1 class="body-title"><span style="color:red;">SMW</span><span style="color:#539;">Agent</span><span style="color:#EC1;">09AF</span> Plus</h1>
 			<hr />
@@ -343,18 +344,18 @@
 				</div>
 			</details>
 			<h3 id="ram">RAM addresses</h3>
-			<p>Some of the addresses below were copied from a couple of the SMW RAM maps on smwcentral.net, and the rest were directly copied from the credited users while a stream was happening. The "Tested" check means that I personally know that it works (fairly) consistently. I am unsure of some of them, as they may rely on some external ASM that was already loaded, have other requirements for working, or be caused by some other value changes that I didn't catch.</p>
+			<p>Some of the addresses below were copied from a couple of the SMW RAM maps on smwcentral.net, and the rest were directly copied from the credited users while a stream was happening. The "&check;" column means that I have tested the address personally or know that it works (fairly) consistently. I am unsure of some of them, as they may rely on some external ASM that was already loaded, have other requirements for working, or be caused by some other value changes that I didn't catch.</p>
 			<em class="aside">The following list was manually converted from a messy Google Keep document into Google Sites because I needed more features and less page load time, and subsequently reformatted to here through some semi-automated processes. I don't remember why I put some of this stuff in the original Keep document, but I copied it all into here anyway.</em>
 			<table id="RAMTable">
 				<thead>
 					<tr>
 						<th onclick="sortTable(0)">Start Address | Name ⇳</th>
 						<th onclick="sortTable(1)">Description ⇳</th>
-						<th onclick="sortTable(2)">Category ⇳</th>
+						<th onclick="sortTable(2)">Type ⇳</th>
 						<th onclick="sortTable(3)">Example ⇳</th>
 						<th onclick="sortTable(4)">Credited User ⇳</th>
 						<th onclick="sortTable(5)">SMWC Link ⇳</th>
-						<th onclick="sortTable(6)">Tested ⇳</th>
+						<th onclick="sortTable(6)">&check; ⇳</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -364,7 +365,7 @@
 						<td>Graphics</td>
 						<td><code>!12 0x3d</code></td>
 						<td>SuperMaks64</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0012/">https://smwc.me/m/smw/ram/7E0012/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0012/">7E0012</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0019 | !powerup</td>
@@ -372,7 +373,7 @@
 						<td>Help</td>
 						<td><code>!19 92</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0019/">https://smwc.me/m/smw/ram/7E0019/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0019/">7E0019</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0040</td>
@@ -380,7 +381,7 @@
 						<td>Graphics</td>
 						<td>Dark + translucent Layer 1: <code>!40 ff</code></td>
 						<td>unknown</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0040/">https://smwc.me/m/smw/ram/7E0040/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0040/">7E0040</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0044</td>
@@ -388,7 +389,7 @@
 						<td>Graphics</td>
 						<td><code>!44 c2</code></td>
 						<td>unknown</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0044/">https://smwc.me/m/smw/ram/7E0044/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0044/">7E0044</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e005d</td>
@@ -396,7 +397,7 @@
 						<td>Troll</td>
 						<td><code>!5d 0</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E005D/">https://smwc.me/m/smw/ram/7E005D/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E005D/">7E005D</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0064</td>
@@ -404,7 +405,7 @@
 						<td>Misc</td>
 						<td><code>!64 2</code></td>
 						<td>tjb0607</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0064/">https://smwc.me/m/smw/ram/7E0064/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0064/">7E0064</a></td>
 						<td class="center">&nbsp;</td>
 					</tr><tr>
 						<td>$7e0071 | !player_mode_dispatch</td>
@@ -412,7 +413,7 @@
 						<td>Help</td>
 						<td><code>!player_mode_dispatch 7</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0071/">https://smwc.me/m/smw/ram/7E0071/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0071/">7E0071</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0075</td>
@@ -420,7 +421,7 @@
 						<td>Fun</td>
 						<td><code>!w 0x7E0075 0x01</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0075/">https://smwc.me/m/smw/ram/7E0075/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0075/">7E0075</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0082 (linear)</td>
@@ -428,7 +429,7 @@
 						<td>Misc</td>
 						<td><code>!wl 7e0082 34 34 34</code></td>
 						<td>Perryman1138</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0082/">https://smwc.me/m/smw/ram/7E0082/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0082/">7E0082</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0085 | !is_water_level</td>
@@ -436,7 +437,7 @@
 						<td>Help</td>
 						<td><code>!is_water_level 1</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0085/">https://smwc.me/m/smw/ram/7E0085/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0085/">7E0085</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0086 | !slippery_amount</td>
@@ -444,7 +445,7 @@
 						<td>Troll</td>
 						<td><code>!w 7e0086 ff</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0086/">https://smwc.me/m/smw/ram/7E0086/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0086/">7E0086</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e009e (multi)</td>
@@ -460,7 +461,7 @@
 						<td>Help</td>
 						<td><code>!mode f</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0100/">https://smwc.me/m/smw/ram/7E0100/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0100/">7E0100</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0109</td>
@@ -468,7 +469,7 @@
 						<td>Fun</td>
 						<td>Top secret area: <code>!w 0x7E0109 0x03</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0109/">https://smwc.me/m/smw/ram/7E0109/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0109/">7E0109</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0701</td>
@@ -476,7 +477,7 @@
 						<td>Graphics</td>
 						<td><code>!w 0x7e0701 0x9c</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0701/">https://smwc.me/m/smw/ram/7E0701/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0701/">7E0701</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0dae | !screen_display_value</td>
@@ -484,7 +485,7 @@
 						<td>Graphics</td>
 						<td><code>!dae 0f</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DAE/">https://smwc.me/m/smw/ram/7E0DAE/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DAE/">7E0DAE</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0dba (linear)</td>
@@ -492,7 +493,7 @@
 						<td>Misc</td>
 						<td><code>!wl 7e0dba 8 8</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DBA/">https://smwc.me/m/smw/ram/7E0DBA/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DBA/">7E0DBA</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0dc0</td>
@@ -500,7 +501,7 @@
 						<td>Misc</td>
 						<td><code>!dc0 0</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DC0/">https://smwc.me/m/smw/ram/7E0DC0/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DC0/">7E0DC0</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0dc2 | !reserve_item</td>
@@ -508,7 +509,7 @@
 						<td>Fun</td>
 						<td><code>!dc2 c2</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DC2/">https://smwc.me/m/smw/ram/7E0DC2/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DC2/">7E0DC2</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0dd3</td>
@@ -516,15 +517,15 @@
 						<td>Misc</td>
 						<td><code>!w 0x7E0DD3 0x02</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DD3/">https://smwc.me/m/smw/ram/7E0DD3/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0DD3/">7E0DD3</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0ef9 (linear)</td>
 						<td>Status Bar GFX. Writing through chat commands is off limits; use CARL if necessary.</td>
 						<td>Graphics</td>
-						<td><a href="https://media.smwcentral.net/Diagrams/StatusBarMap.png">https://media.smwcentral.net/Diagrams/StatusBarMap.png</a></td>
+						<td><a href="https://media.smwcentral.net/Diagrams/StatusBarMap.png">StatusBarMap.png</a></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0EF9/">https://smwc.me/m/smw/ram/7E0EF9/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0EF9/">7E0EF9</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0f31 (linear) | !timer_hundreds !timer_tens !timer_ones</td>
@@ -532,7 +533,7 @@
 						<td>Fun</td>
 						<td><code>!wl f31 1 0 1</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0F31/">https://smwc.me/m/smw/ram/7E0F31/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0F31/">7E0F31</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0fae (linear)</td>
@@ -540,7 +541,7 @@
 						<td>Fun</td>
 						<td><code>!fae 0x88</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0FAE/">https://smwc.me/m/smw/ram/7E0FAE/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0FAE/">7E0FAE</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13cb</td>
@@ -548,7 +549,7 @@
 						<td>Fun</td>
 						<td><code>!w 7e13cb 80</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13CB/">https://smwc.me/m/smw/ram/7E13CB/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13CB/">7E13CB</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13cc</td>
@@ -556,15 +557,15 @@
 						<td>Misc</td>
 						<td><code>!w 7e13cc 63</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13CC/">https://smwc.me/m/smw/ram/7E13CC/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13CC/">7E13CC</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13e0</td>
-						<td>Player's "pose", used in "CoinPoser" . See <a href="https://bin.smwcentral.net/u/15661/MarioPoses.png">https://bin.smwcentral.net/u/15661/MarioPoses.png</a> for expected values.</td>
+						<td>Player's "pose", used in "CoinPoser" . See <a href="https://bin.smwcentral.net/u/15661/MarioPoses.png">MarioPoses.png</a> for expected values.</td>
 						<td>Graphics</td>
 						<td><code>!w 13e0 42</code></td>
 						<td>LouisDoucet</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13E0/">https://smwc.me/m/smw/ram/7E13E0/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13E0/">7E13E0</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13e3</td>
@@ -572,7 +573,7 @@
 						<td>Misc</td>
 						<td><code>!w 0x7E13E3 0x06</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13E3/">https://smwc.me/m/smw/ram/7E13E3/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13E3/">7E13E3</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13f9</td>
@@ -580,7 +581,7 @@
 						<td>Misc</td>
 						<td><code>!w 7e13f9 02</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13F9/">https://smwc.me/m/smw/ram/7E13F9/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13F9/">7E13F9</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13fb</td>
@@ -588,7 +589,7 @@
 						<td>Troll</td>
 						<td><code>!w 0x7e13fb 0x01</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13FB/">https://smwc.me/m/smw/ram/7E13FB/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13FB/">7E13FB</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13f3</td>
@@ -596,7 +597,7 @@
 						<td>Troll</td>
 						<td><code>!wl 7e13fe 09</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13F3/">https://smwc.me/m/smw/ram/7E13F3/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13F3/">7E13F3</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13fd (linear)</td>
@@ -604,7 +605,7 @@
 						<td>Fun</td>
 						<td><code>!wl 7e13fd 01 04 00 ff</code></td>
 						<td>Perryman1138</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13FD/">https://smwc.me/m/smw/ram/7E13FD/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E13FD/">7E13FD</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1403 | !is_water_current</td>
@@ -612,7 +613,7 @@
 						<td>Troll</td>
 						<td><code>!is_water_current 1</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1403/">https://smwc.me/m/smw/ram/7E1403/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1403/">7E1403</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1411</td>
@@ -620,7 +621,7 @@
 						<td>Troll</td>
 						<td><code>!1411 0</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1411/">https://smwc.me/m/smw/ram/7E1411/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1411/">7E1411</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1413</td>
@@ -628,7 +629,7 @@
 						<td>Graphics</td>
 						<td><code>!w 7e1413 02</code></td>
 						<td>SuperMaks64</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1413/">https://smwc.me/m/smw/ram/7E1413/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1413/">7E1413</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1414</td>
@@ -636,7 +637,7 @@
 						<td>Graphics</td>
 						<td><code>!w 7e1414 01</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1413/">https://smwc.me/m/smw/ram/7E1413/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1413/">7E1413</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1419</td>
@@ -644,7 +645,7 @@
 						<td>Graphics</td>
 						<td><code>!w 0x7E1419 0x02</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1419/">https://smwc.me/m/smw/ram/7E1419/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1419/">7E1419</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e141a | !transition_counter</td>
@@ -652,7 +653,7 @@
 						<td>Troll</td>
 						<td><code>!141a ff</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E141A/">https://smwc.me/m/smw/ram/7E141A/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E141A/">7E141A</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1425</td>
@@ -660,7 +661,7 @@
 						<td>Fun</td>
 						<td><code>!1425 1</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1425/">https://smwc.me/m/smw/ram/7E1425/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1425/">7E1425</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1434 | !keyhole_timer</td>
@@ -668,7 +669,7 @@
 						<td>Help</td>
 						<td><code>!keyhole_timer 30</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1434/">https://smwc.me/m/smw/ram/7E1434/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1434/">7E1434</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1493 | !end_level_timer</td>
@@ -676,7 +677,7 @@
 						<td>Help</td>
 						<td><code>!end_level_timer 1</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1493/">https://smwc.me/m/smw/ram/7E1493/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1493/">7E1493</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e14ae | !pswitch_silver_timer</td>
@@ -684,7 +685,7 @@
 						<td>Fun</td>
 						<td><code>!w 7e14ae ff</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E14AE/">https://smwc.me/m/smw/ram/7E14AE/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E14AE/">7E14AE</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e14b6 (linear)</td>
@@ -692,7 +693,7 @@
 						<td>Help</td>
 						<td><code>!w 14b6 80</code></td>
 						<td>MrMeyham</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E14B6/">https://smwc.me/m/smw/ram/7E14B6/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E14B6/">7E14B6</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e185c | !disable_ground_interaction</td>
@@ -700,7 +701,7 @@
 						<td>Troll</td>
 						<td><code>!w 0x7E185C 0x01</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E185C/">https://smwc.me/m/smw/ram/7E185C/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E185C/">7E185C</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e186b</td>
@@ -708,7 +709,7 @@
 						<td>Fun</td>
 						<td><code>!w 0x7E186B 0xFF</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E186B/">https://smwc.me/m/smw/ram/7E186B/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E186B/">7E186B</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1887 | !layer_1_shake_timer</td>
@@ -716,7 +717,7 @@
 						<td>Fun</td>
 						<td><code>!w 0x7E1887 0xFF</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1887/">https://smwc.me/m/smw/ram/7E1887/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1887/">7E1887</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e18bc | !skull_platform_speed</td>
@@ -724,7 +725,7 @@
 						<td>Troll</td>
 						<td><code>!w 7e18bc 0</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18BC/">https://smwc.me/m/smw/ram/7E18BC/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18BC/">7E18BC</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e18c2 | !is_on_lakitu_cloud</td>
@@ -732,7 +733,7 @@
 						<td>Fun</td>
 						<td><code>!w 0x7e18c2 0x01</code></td>
 						<td>wolfman2000</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18C2/">https://smwc.me/m/smw/ram/7E18C2/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18C2/">7E18C2</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e18e4 (multi)</td>
@@ -748,7 +749,7 @@
 						<td>Help</td>
 						<td><code>!queued_lives a</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18E4/">https://smwc.me/m/smw/ram/7E18E4/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E18E4/">7E18E4</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1b95</td>
@@ -756,7 +757,7 @@
 						<td>Troll</td>
 						<td><code>!w 0x7E1B95 0x02</code></td>
 						<td>SMWAgent09AF</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1B95/">https://smwc.me/m/smw/ram/7E1B95/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1B95/">7E1B95</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1ba0</td>
@@ -764,7 +765,7 @@
 						<td>Fun</td>
 						<td><code>!w 7e1ba0 ff</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1BA0/">https://smwc.me/m/smw/ram/7E1BA0/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1BA0/">7E1BA0</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1dea</td>
@@ -772,7 +773,7 @@
 						<td>Misc</td>
 						<td><code>!w 0x7E1DEA 0x01</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DEA/">https://smwc.me/m/smw/ram/7E1DEA/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DEA/">7E1DEA</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1df9 (linear)</td>
@@ -780,7 +781,7 @@
 						<td>Fun</td>
 						<td><code>!wl 0x7E1DF9 0xC3 0x27 0x98 0x7A</code></td>
 						<td>unknown</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DF9/">https://smwc.me/m/smw/ram/7E1DF9/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DF9/">7E1DF9</a></td>
 						<td class="center">&nbsp;</td>
 					</tr><tr>
 						<td>$7e1dfb | !music_dispatch</td>
@@ -788,7 +789,7 @@
 						<td>Fun</td>
 						<td><code>!music_dispatch 12</code></td>
 						<td>N/A</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DFB/">https://smwc.me/m/smw/ram/7E1DFB/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DFB/">7E1DFB</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1f11 (multi)</td>
@@ -804,7 +805,7 @@
 						<td>Misc</td>
 						<td><code>!wl 7e1f27 00 00 00 00</code></td>
 						<td>SuperMaks64</td>
-						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1F27/">https://smwc.me/m/smw/ram/7E1F27/</a></td>
+						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1F27/">7E1F27</a></td>
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7f9696</td>
