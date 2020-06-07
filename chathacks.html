@@ -225,7 +225,7 @@
 							<td>sideexit</td>
 							<td>snydej</td>
 							<td></td>
-							<td>Spawns side exit sprite on current screen (?)</td>
+							<td>Enables side exit flag</td>
 						</tr>
 						<tr>
 							<td>Sleappery</td>
@@ -402,12 +402,12 @@
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0064</td>
-						<td>First byte(?) of sprite properties</td>
-						<td>Misc</td>
+						<td>First byte of some sprite properties</td>
+						<td>Graphics</td>
 						<td><code>!64 2</code></td>
 						<td>tjb0607</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E0064/">7E0064</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e0071 | !player_mode_dispatch</td>
 						<td>Player mode trigger</td>
@@ -586,7 +586,7 @@
 						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e13fb</td>
-						<td>Player is frozen (buggy)</td>
+						<td>Player is frozen (any sprite interaction while frozen will cause game to softlock until this byte is set to 0 again)</td>
 						<td>Troll</td>
 						<td><code>!w 0x7e13fb 0x01</code></td>
 						<td>SMWAgent09AF</td>
@@ -783,7 +783,7 @@
 						<td><code>!wl 0x7E1DF9 0xC3 0x27 0x98 0x7A</code></td>
 						<td>unknown</td>
 						<td class="center"><a href="https://smwc.me/m/smw/ram/7E1DF9/">7E1DF9</a></td>
-						<td class="center">&nbsp;</td>
+						<td class="center"><span class="status-check">&check;</span></td>
 					</tr><tr>
 						<td>$7e1dfb | !music_dispatch</td>
 						<td>Play music: <a href="https://www.smwcentral.net/?p=viewthread&amp;t=6665&amp;page=4&amp;pid=673442#p673442">List of songs/FX</a></td>
