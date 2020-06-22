@@ -37,7 +37,7 @@ ul.nolabel > li{list-style-type:none;padding:2px;}
 .aside{font-size:11px!important;}
 span.nospam{display:none;}
 span.status-check{font-size:16px;font-weight:999;color:#090;}
-code{user-select:all;background:#DDD;font-family:'Courier',monospace;font-weight:600;color:#282;}
+code{user-select:all;cursor:copy;background:#DDD;font-family:'Courier',monospace;font-weight:600;color:#282;}
 p.attr{font-size:12px;font-weight:700;letter-spacing:.1em;}
 #commandbox{background:#FFFA;margin:15px;border:5px outset #B559;border-radius:2em;}
 #cmdbox-summary{padding:10px;margin-left:1em;font-family:'Helvetica','Verdana',sans-serif;font-weight:bold;font-size:14px;}
@@ -49,6 +49,8 @@ a.footref{color:#900;font-weight:999;text-decoration:underline;}
 p.footnote{color:#900;font-size:12px;}
 
 /* Table */
+
+table :target{border:2px dashed #ed0c;border-left:2px solid red;}
 
 table {
 	table-layout: fixed;
@@ -83,6 +85,8 @@ th {
 	background-size: 20px 20px;
 	color: #FFF;
 }
+
+th.click{cursor:pointer;}
 
 tr:nth-child(even) {
 	background-color: #EFEFEF;
