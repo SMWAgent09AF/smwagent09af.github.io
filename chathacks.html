@@ -301,49 +301,44 @@
 				</ul>
 				<p>Visit <a href="https://www.smwcentral.net/?p=memorymap&game=smw&u=0&address=&sizeOperation=%3D&sizeValue=&region[]=ram&type=Empty&description=">this filtered RAM map</a> to see other free regions of RAM you can use.</p>
 			<h3 id="commands">Helpful commands (NEW!)</h3>
-			<details id="commandbox" open>
-				<summary id="cmdbox-summary">Work in Progress</summary>
-				<div id="details-wrapper" style="padding:15px;">
-					<div id="cmdbox-emergency">
-						<h4 class="cmdbox">Emergency OW Teleport (do not abuse)</h4>
-						<p>#1 Iggy's Castle: <code>!w 7E1F11 01 7E1F17 98 7E1F18 00 7E1F19 28 7E1F1A 00 mode b</code></p>
-						<p>#2 Morton's Castle: <code>!w 7E1F11 00 7E1F17 D8 7E1F18 00 7E1F19 C8 7E1F1A 00 mode b</code></p>
-						<p>#3 Lemmy's Castle: <code>!w 7E1F11 02 7E1F17 C8 7E1F18 00 7E1F19 28 7E1F1A 01 mode b</code></p>
-						<p>#4 Ludwig's Castle: <code>!w 7E1F11 00 7E1F17 A8 7E1F18 01 7E1F19 38 7E1F1A 00 mode b</code></p>
-						<p>Forest of Illusion 1: <code>!w 7E1F11 03 7E1F17 88 7E1F18 00 7E1F19 78 7E1F1A 01 mode b</code></p>
-						<p>#5 Roy's Castle: <code>!w 7E1F11 00 7E1F17 88 7E1F18 01 7E1F19 28 7E1F1A 01 mode b</code></p>
-						<p>#6 Wendy's Castle: <code>!w 7E1F11 00 7E1F17 C8 7E1F18 00 7E1F19 B8 7E1F1A 01 mode b</code></p>
-						<p>Valley of Bowser 1: <code>!w 7E1F11 04 7E1F17 b8 7E1F18 01 7E1F19 78 7E1F1A 00 mode b</code></p>
-						<p>#7 Larry's Castle: <code>!w 7E1F11 04 7E1F17 78 7E1F18 01 7E1F19 58 7E1F1A 00 mode b</code></p>
-						<p>Back door: <code>!w 7E1F11 04 7E1F17 98 7E1F18 01 7E1F19 38 7E1F1A 00 mode b</code></p>
-						<p>Star World 1: <code>!w 7E1F11 6 7E1F17 48 7E1F18 1 7E1F19 A8 7E1F1A 1 mode b</code></p>
-						<p>Gnarly (Special world 1): <code>!w 7E1F11 05 7E1F17 18 7E1F18 01 7E1F19 38 7E1F1A 01 mode b</code></p>
-						<p>Funky (Special world 8): <code>!w 7E1F11 05 7E1F17 38 7E1F18 01 7E1F19 18 7E1F1A 01 mode b</code></p>
-						<p class="aside">You can make your own teleport command by running SMW locally in emulators with a RAM editor (snes9x, BizHawk, no$sns, etc), walking to your desired location on the overworld, opening the emulator's memory/RAM viewer, locating the addresses used in the above commands ($7E1F11, $7E1F17, $7E1F18, $7E1F19, and $7E1F1A), and putting the displayed values in place of the ones in the commands above.</p>
-					</div>
-					<hr />
-					<div id="cmdbox-autumn">
-						<h4 class="cmdbox">Autumn</h4>
-						<p>To turn Autumn palette and sprites off, paste <code>!w 7E1EEB 0</code>.</p>
-						<p>To turn Autumn palette and sprites on (not recommended), paste <code>!w 7E1EEB 80</code>.</p>
-						<p class="aside">Changes to the autumn bit are applied when the overworld is reloaded.</p>
-					</div>
-					<hr />
-					<div id="cmdbox-level">
-						<h4 class="cmdbox">Level Functions</h4>
-						<p>If the player is stuck in a level (especially level 0/Bonus Game), pasting <code>!mode b</code> will instantly take the player back to the overworld, providing the game hasn't frozen.</p>
-						<p>Alternatively, pasting <code>!mode f</code> will restart the level from the beginning, provided that some joker hasn't changed the player's overworld position. If that has happened, see above.</p>
-						<p>If you don't want to start the level over, try simply pasting <code>!end_level_timer FF</code> for the normal exit and <code>!keyhole_timer 30</code> for the secret exit. If you want to end the level in style with the regular exit and give the player a blue yoshi, paste <code>!player_mode_dispatch 8</code>. Note that none of these commands will end the Bowser fight! (That is also possible with Chat Hacks, but I will leave that for a later time.)</p>
-					</div>
-					<hr />
-					<div id="cmdbox-sanity">
-						<h4 class="cmdbox">Gameplay Sanity</h4>
-						<p>If the player needs some health, paste one of the following: <code>!19 1</code> for big Mario, <code>!19 2</code> for cape Mario, or <code>!19 3</code> for fire Mario.</p>
-						<p>If the player needs star invincibility for some reason, load the "starman" ASM with <code>!load starman</code>.
-						<p>If the screen is dark for some reason unrelated to the disco spotlight in Bowser's castle (e.g. if the "darkness" ASM is unloaded at the wrong time), try pasting <code>!dae f</code>. This might fix it.</p>
-					</div>
-				</div>
-			</details>
+			<div id="cmdbox-emergency">
+				<h4 class="cmdbox">Emergency OW Teleport (do not abuse)</h4>
+				<p>#1 Iggy's Castle: <code>!w 7E1F11 01 7E1F17 98 7E1F18 00 7E1F19 28 7E1F1A 00 mode b</code></p>
+				<p>#2 Morton's Castle: <code>!w 7E1F11 00 7E1F17 D8 7E1F18 00 7E1F19 C8 7E1F1A 00 mode b</code></p>
+				<p>#3 Lemmy's Castle: <code>!w 7E1F11 02 7E1F17 C8 7E1F18 00 7E1F19 28 7E1F1A 01 mode b</code></p>
+				<p>#4 Ludwig's Castle: <code>!w 7E1F11 00 7E1F17 A8 7E1F18 01 7E1F19 38 7E1F1A 00 mode b</code></p>
+				<p>Forest of Illusion 1: <code>!w 7E1F11 03 7E1F17 88 7E1F18 00 7E1F19 78 7E1F1A 01 mode b</code></p>
+				<p>#5 Roy's Castle: <code>!w 7E1F11 00 7E1F17 88 7E1F18 01 7E1F19 28 7E1F1A 01 mode b</code></p>
+				<p>#6 Wendy's Castle: <code>!w 7E1F11 00 7E1F17 C8 7E1F18 00 7E1F19 B8 7E1F1A 01 mode b</code></p>
+				<p>Valley of Bowser 1: <code>!w 7E1F11 04 7E1F17 b8 7E1F18 01 7E1F19 78 7E1F1A 00 mode b</code></p>
+				<p>#7 Larry's Castle: <code>!w 7E1F11 04 7E1F17 78 7E1F18 01 7E1F19 58 7E1F1A 00 mode b</code></p>
+				<p>Back door: <code>!w 7E1F11 04 7E1F17 98 7E1F18 01 7E1F19 38 7E1F1A 00 mode b</code></p>
+				<p>Star World 1: <code>!w 7E1F11 6 7E1F17 48 7E1F18 1 7E1F19 A8 7E1F1A 1 mode b</code></p>
+				<p>Gnarly (Special world 1): <code>!w 7E1F11 05 7E1F17 18 7E1F18 01 7E1F19 38 7E1F1A 01 mode b</code></p>
+				<p>Funky (Special world 8): <code>!w 7E1F11 05 7E1F17 38 7E1F18 01 7E1F19 18 7E1F1A 01 mode b</code></p>
+				<p class="aside">You can make your own teleport command by running SMW locally in emulators with a RAM editor (snes9x, BizHawk, no$sns, etc), walking to your desired location on the overworld, opening the emulator's memory/RAM viewer, locating the addresses used in the above commands ($7E1F11, $7E1F17, $7E1F18, $7E1F19, and $7E1F1A), and putting the displayed values in place of the ones in the commands above.</p>
+			</div>
+			<hr />
+			<div id="cmdbox-autumn">
+				<h4 class="cmdbox">Autumn</h4>
+				<p>To turn Autumn palette and sprites off, paste <code>!w 7E1EEB 0</code>.</p>
+				<p>To turn Autumn palette and sprites on (not recommended), paste <code>!w 7E1EEB 80</code>.</p>
+				<p class="aside">Changes to the autumn bit are applied when the overworld is reloaded.</p>
+			</div>
+			<hr />
+			<div id="cmdbox-level">
+				<h4 class="cmdbox">Level Functions</h4>
+				<p>If the player is stuck in a level (especially level 0/Bonus Game), pasting <code>!mode b</code> will instantly take the player back to the overworld, providing the game hasn't frozen.</p>
+				<p>Alternatively, pasting <code>!mode f</code> will restart the level from the beginning, provided that some joker hasn't changed the player's overworld position. If that has happened, see above.</p>
+				<p>If you don't want to start the level over, try simply pasting <code>!end_level_timer FF</code> for the normal exit and <code>!keyhole_timer 30</code> for the secret exit. If you want to end the level in style with the regular exit and give the player a blue yoshi, paste <code>!player_mode_dispatch 8</code>. Note that none of these commands will end the Bowser fight! (That is also possible with Chat Hacks, but I will leave that for a later time.)</p>
+			</div>
+			<hr />
+			<div id="cmdbox-sanity">
+				<h4 class="cmdbox">Gameplay Sanity</h4>
+				<p>If the player needs some health, paste one of the following: <code>!19 1</code> for big Mario, <code>!19 2</code> for cape Mario, or <code>!19 3</code> for fire Mario.</p>
+				<p>If the player needs star invincibility for some reason, load the "starman" ASM with <code>!load starman</code>.
+				<p>If the screen is dark for some reason unrelated to the disco spotlight in Bowser's castle (e.g. if the "darkness" ASM is unloaded at the wrong time), try pasting <code>!dae f</code>. This might fix it.</p>
+			</div>
 			<h3 id="ram">RAM addresses</h3>
 			<p>Some of the addresses below were copied from a couple of the SMW RAM maps on smwcentral.net, and the rest were directly copied from the credited users while a stream was happening. The "&check;" column means that I have tested the address personally or know that it works (fairly) consistently. At the moment there are no untested addresses, but if one gets added later without this check, this may be because the effect I associate with it may rely on some external ASM that was already loaded, have other requirements for working, or be caused by some other value changes that I didn't catch.</p>
 			<em class="aside">The following list was manually converted from a messy Google Keep document into Google Sites because I needed more features and less page load time, and subsequently reformatted to here through some semi-automated processes. I don't remember why I put some of this stuff in the original Keep document, but I copied it all into here anyway.</em>

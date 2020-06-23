@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap');
+
 /* Pseudo Responsive */
 
 body {
@@ -15,7 +18,10 @@ body > .chathacks {
 
 /* General */
 
-*{font-family:'Verdana','Helvetica',sans-serif;font-size:15px;}
+::-moz-selection{color:#A0B;background:#FFB;}
+::selection{color:#A0B;background:#FFB;}
+*{font-family:'IBM Plex Sans','Verdana','Helvetica',sans-serif;font-size:15px;}
+body{background:linear-gradient(45deg,#903,#B60) no-repeat center center fixed;background-size:cover;}
 h1,h1 * {font-size:24px;}
 h2,h2 * {font-size:20px;}
 h3,h3 * {font-size:18px;}
@@ -34,19 +40,19 @@ ul.nolabel > li{list-style-type:none;padding:2px;}
 .nav-button:nth-child(even){background:#BEB;}
 .nav-button:nth-child(odd){background:#ACE;}
 .nav-button.current{opacity:.6;border-color:transparent;border-radius:6px;}
-.aside{font-size:11px!important;}
+.aside{font-family:'IBM Plex Sans Condensed','Verdana','Helvetica',sans-serif;font-size:11px!important;}
 span.nospam{display:none;}
 span.status-check{font-size:16px;font-weight:999;color:#090;}
-code{user-select:all;cursor:copy;background:#DDD;font-family:'Courier',monospace;font-weight:600;color:#282;}
+code{user-select:all;cursor:copy;background:#DDD;font-family:'IBM Plex Mono','Courier',monospace;color:#282;}
 p.attr{font-size:12px;font-weight:700;letter-spacing:.1em;}
 #commandbox{background:#FFFA;margin:15px;border:5px outset #B559;border-radius:2em;}
-#cmdbox-summary{padding:10px;margin-left:1em;font-family:'Helvetica','Verdana',sans-serif;font-weight:bold;font-size:14px;}
-h4.cmdbox{font-family:'Helvetica','Verdana',sans-serif;font-size:16px;}
+#cmdbox-summary{padding:10px;margin-left:1em;font-family:'IBM Plex Sans','Verdana','Helvetica',sans-serif;font-weight:bold;font-size:14px;}
+h4.cmdbox{font-family:'IBM Plex Sans','Verdana','Helvetica',sans-serif;font-size:16px;}
 #details-wrapper div{margin:10px;}
 #details-wrapper hr{width:85%;border:1px solid #B88;}
-h4.cmdbox ~ p{font-family:'Helvetica','Verdana',sans-serif;font-size:14px;}
+h4.cmdbox ~ p{font-family:'IBM Plex Sans','Verdana','Helvetica',sans-serif;font-size:14px;}
 a.footref{color:#900;font-weight:999;text-decoration:underline;}
-p.footnote{color:#900;font-size:12px;}
+p.footnote{color:#900;font-family:'IBM Plex Sans Condensed','Verdana','Helvetica',sans-serif;font-size:12px;}
 
 /* Table */
 
@@ -75,13 +81,13 @@ th, td {
 th {
 	text-align:center;
 	/* Background source: https://leaverou.github.io/css3patterns/#carbon-fibre */
-	background: linear-gradient(27deg, #222 5px, transparent 5px) 0 5px,
-		linear-gradient(207deg, #222 5px, transparent 5px) 10px 0px,
-		linear-gradient(27deg, #333 5px, transparent 5px) 0px 10px,
-		linear-gradient(207deg, #333 5px, transparent 5px) 10px 5px,
-		linear-gradient(90deg, #222 10px, transparent 10px),
-		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-	background-color: #131313;
+	background: linear-gradient(27deg, #600 5px, transparent 5px) 0 5px,
+		linear-gradient(207deg, #600 5px, transparent 5px) 10px 0px,
+		linear-gradient(27deg, #822 5px, transparent 5px) 0px 10px,
+		linear-gradient(207deg, #822 5px, transparent 5px) 10px 5px,
+		linear-gradient(90deg, #600 10px, transparent 10px),
+		linear-gradient(#311 25%, #400 25%, #400 50%, transparent 50%, transparent 75%, #422 75%, #422);
+	background-color: #322;
 	background-size: 20px 20px;
 	color: #FFF;
 }
@@ -90,8 +96,8 @@ th.click{cursor:pointer;}
 
 tr:nth-child(even) {
 	background-color: #EFEFEF;
-	background-image: linear-gradient(45deg, #2462 25%, transparent 25%, transparent 75%, #2462 75%, #2462), 
-		linear-gradient(45deg, #2462 25%, transparent 25%, transparent 75%, #2462 75%, #2462);
+	background-image: linear-gradient(45deg, #1362 25%, transparent 25%, transparent 75%, #1362 75%, #1362), 
+		linear-gradient(45deg, #1362 25%, transparent 25%, transparent 75%, #1362 75%, #1362);
 	background-size: 3px 2px;
 	background-position: 0 0, 1px 4px;
 }
@@ -106,7 +112,7 @@ td.center {
 
 /* flex/Flexbox */
 
-.flex{border:2px outset #9119;border-radius:1.5em;padding:1em;margin:0.5em;}
+.flex{border:2px outset #9119;border-radius:1.5em;padding:1em;margin:0.5em;background:#FFFE;}
 
 .flex.header{flex-area:header;}
 .flex.nav{flex-area:nav;}
