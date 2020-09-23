@@ -18,6 +18,7 @@
 		<nav class="flex nav chathacks">
 			<button class="nav-button"><a href="index.html">Home</a></button>
 			<button class="nav-button"><a href="contact.html">Contact me</a></button>
+			<button class="nav-button"><a href="speedrun.html">Speedruns</a></button>
 			<button class="nav-button current">Chat Hacks Information</button>
 			<button class="nav-button"><a href="kssrandomizer.html">KSS Randomizer RTA</a></button>
 		</nav>
@@ -66,6 +67,18 @@
 							<td></td>
 						</tr>
 						<tr>
+							<td>bgmorph2</td>
+							<td>smwagent09af</td>
+							<td>Periodically changes background color based on screen position and Mario's speed</td>
+							<td>Much less seizure-inducing than <a href="https://patcdr.net/carl/asms/BGMorph" target="_blank">the original bgmorph</a>.</td>
+						</tr>
+						<tr>
+							<td>blowshi</td>
+							<td>snydej</td>
+							<td>Yoshi? More like Blowshi! <span role="img" aria-label="rolling on the floor laughing">&#x1F923;</span></td>
+							<td>Yoshi will explode after a bit of time</td>
+						</tr>
+						<tr>
 							<td>boosprites2</td>
 							<td>snydej</td>
 							<td>Sprites are boos when not being looked at</td>
@@ -81,7 +94,19 @@
 							<td>CoinPoser</td>
 							<td>mrmeyham</td>
 							<td>Coins = Pose</td>
-							<td>See <a href="#7e13e0">$7e13e0</a> below. Great for use with &quot;coinrun&quot;</td>
+							<td>See <a href="#7e13e0">$7e13e0</a> below. Great for use with coinrun and/or xycoin</td>
+						</tr>
+						<tr>
+							<td>coinun</td>
+							<td>snydej</td>
+							<td>Running costs coins</td>
+							<td>Great for use with xycoin</td>
+						</tr>
+						<tr>
+							<td>cointimer</td>
+							<td>lineprinter</td>
+							<td>coins decrease the timer</td>
+							<td>Great for use with xycoin</td>
 						</tr>
 						<tr>
 							<td>Darkness</td>
@@ -94,6 +119,18 @@
 							<td>furyfulfawful</td>
 							<td>Make all sprites fallow mario like disco shells</td>
 							<td>recommended for use with boosprites2</td>
+						</tr>
+						<tr>
+							<td>DontLetGo</td>
+							<td>fiskbit</td>
+							<td>Pushes Mario left when not holding any buttons</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>dropout</td>
+							<td>smwagent09af</td>
+							<td>Periodically disables ground collision</td>
+							<td>Includes sound cues</td>
 						</tr>
 						<tr>
 							<td>Ebb</td>
@@ -138,6 +175,12 @@
 							<td>Wonderful troll when player expects a different L+R function. Warning displayed on HUD</td>
 						</tr>
 						<tr>
+							<td>mansbesthorse</td>
+							<td>snydej</td>
+							<td>He's there for you whether you want him or not.</td>
+							<td>Jumping gives a Yoshi</td>
+						</tr>
+						<tr>
 							<td>oddraft</td>
 							<td>snydej</td>
 							<td></td>
@@ -171,7 +214,7 @@
 							<td>porcusprites2</td>
 							<td>smwagent09af</td>
 							<td>snydej&#39;s boosprites2 except with porcupuffers</td>
-							<td>May cause sprite lag and despawn important sprites if too many sprites follow the player</td>
+							<td>May cause sprite lag and despawn important sprites</td>
 						</tr>
 						<tr>
 							<td>r_stars</td>
@@ -214,6 +257,18 @@
 							<td>furyfulfawful</td>
 							<td>player can warp in the direction of the dpad by pressing R</td>
 							<td>Can cause suffocation and cause tiles to visually render improperly</td>
+						</tr>
+						<tr>
+							<td>save</td>
+							<td>snydej</td>
+							<td>Allows saving after every level</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ShakeIt</td>
+							<td>smwagent09af</td>
+							<td>constantly sets Layer 1 shake timer</td>
+							<td>Now with sound effect!</td>
 						</tr>
 						<tr>
 							<td>shells</td>
@@ -269,6 +324,12 @@
 							<td>allows for a chat command to initiate a warp to a specific level</td>
 							<td>see <a href="https://patcdr.net/carl/asms/warp" target="_blank">https://patcdr.net/carl/asms/warp</a></td>
 						</tr>
+						<tr>
+							<td>xycoin</td>
+							<td>smwagent09af</td>
+							<td>Pressing X/Y gives coins</td>
+							<td>Great for use with coinposer, coinrun, cointimer, etc.</td>
+						</tr>
 					</tbody>
 				</table>
 				<em class="aside">There used to be a One Mind snippet! Where did it go?</em>
@@ -284,7 +345,7 @@
 					<li>$7e18b7</li>
 					<li>$7e18cd</li>
 					<li>$7e1dfd - $7e1dfe</li>
-					<li>$7fc7fc</li>
+					<li>$7f90e1 - $7f90e4</li>
 					<li>$7f9696</li>
 					<li>$7f9d05</li>
 					<li>$7f9d0a - $7f9d0c</li>
@@ -298,6 +359,7 @@
 					<li>$7fb3c0 - $7fb3c2</li>
 					<li>$7fb600 - $7fb606 ($7fb601 and $7fb603 are apparently unused)</li>
 					<li>$7fba00</li>
+					<li>$7fc7fc</li>
 				</ul>
 				<p>Visit <a href="https://www.smwcentral.net/?p=memorymap&game=smw&u=0&address=&sizeOperation=%3D&sizeValue=&region[]=ram&type=Empty&description=">this filtered RAM map</a> to see other free regions of RAM you can use.</p>
 			<h3 id="commands">Helpful commands (NEW!)</h3>
