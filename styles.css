@@ -11,7 +11,7 @@ body > * {
 	min-width: 60%;
 }
 
-body > .chathacks, body > .kssr {
+body > .chathacks, body > .kssr, body > .bbmds {
 	min-width: 90%;
 	max-width: 100%;
 }
