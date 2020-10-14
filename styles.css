@@ -12,8 +12,8 @@ body > * {
 }
 
 body > .chathacks, body > .kssr, body > .bbmds {
-	min-width: 90%;
-	max-width: 100%;
+	min-width: 90em;
+	max-width: 160em;
 }
 
 /* General */
