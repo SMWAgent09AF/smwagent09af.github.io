@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+	<title>Scribblenauts Ollar Calculator | SMWAgent09AF Plus</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript">
+		const MULTIPLIERS = [0,1,3,6,7,8,4,9,10,5,11]
+
+		function evalLoop() {
+			var tslider = document.getElementById("time");
+			var toutput = document.getElementById("timeparse");
+			toutput.innerHTML = parseTime(tslider.value);
+			tslider.oninput = function() {
+				toutput.innerHTML = parseTime(this.value);
+			}
+			var outputElement = document.getElementById("output");
+			document.getElementById("formwrapper").addEventListener("input", function() {
+			outputElement.innerHTML = evalMoney({
+				world: getValue("world"),
+			  par: evalPar(getValue("par"), getValue("world")),
+			  time: evalTime(tslider.value),
+			  merit: getValue("merits")
+			})
+			if(outputElement.innerHTML == 314) {
+				outputElement.style = 'color:green;font-weight:bold;'
+			} else {
+				outputElement.style += 'color:initial;font-weight:initial;'
+			}
+		  });
+		}
+
+		function evalMoney(iObj) {
+			var ollars = parseInt(iObj.par) + parseInt(iObj.merit) + iObj.time;
+		  if(isNaN(ollars)) {
+			return "..."
+		  }
+		  if(ollars < 0 || iObj.world == 0) {
+			ollars = 0;
+		  }
+		  return ollars
+		}
+
+		function evalTime(t) {
+		  var cashout = -2 * t + 500;
+		  if(cashout < 0) {
+			return 0
+		  }
+		  return cashout
+		}
+
+		function evalPar(d,w) {
+			return MULTIPLIERS[w] * (-20 * d + 100)
+		}
+
+		function getValue(id) {
+			return document.getElementById(`${id}`).value
+		}
+		
+		function parseTime(s) {
+			var ss = s % 60;
+			var mm = (s - ss) / 60;
+			var between = ""
+			if(s % 60 < 10) {
+				between = "0";
+			}
+			return `${mm}:${between}${ss} (${s})`
+		}
+  </script>
+  <style>
+		* {
+		  font-family: sans-serif;
+		}
+
+		pre {
+		  font-family: monospace;
+		}
+
+		.inputwrapper {
+		  float: left;
+		  padding: 10px;
+		}
+
+		p {
+		  clear: both;
+		}
+  </style>
+</head>
+<body onload="evalLoop()">
+  <div id="formwrapper">
+    <div class="inputwrapper">
+      <label for="world">World: </label>
+      <input type="number" min="0" max="10" value="0" name="world" id="world" />
+    </div>
+    <div class="inputwrapper">
+      <label for="par">Objects - par: </label>
+      <input type="number" min="-24" max="24" value="0" name="par" id="par" />
+    </div>
+    <div class="inputwrapper">
+      <label for="time">Time: </label>
+      <input type="range" min="0" max="250" value="0" name="time" id="time" />
+	  <pre id="timeparse">Value</pre>
+    </div>
+    <div class="inputwrapper">
+      <label for="merits">Style/merit value (interim): </label>
+      <input type="number" min="0" max="995" step="5" value="0" name="merits" id="merits" />
+    </div>
+    <p>
+      <pre id="output">Value</pre>
+    </p>
+  </div>
+</body>
+</html>
