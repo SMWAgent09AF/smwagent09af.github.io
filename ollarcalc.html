@@ -1,119 +1,319 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-<meta charset="UTF-8">
-	<title>Scribblenauts Ollar Calculator | SMWAgent09AF Plus</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript">
-		const MULTIPLIERS = [0,1,3,6,7,8,4,9,10,5,11];
+	<head>
+		<meta charset="UTF-8">
+		<title>Scribblenauts Ollar Calculator | SMWAgent09AF Plus</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript">
+			const MULTIPLIERS = [0,1,3,6,7,8,4,9,10,5,11]
+			const MERITREWARDS = [10,15,10,10,10,10,10,10,10,10,10,15,10,10,10,10,10,10,10,10,10,10,10,10,50,10,10,10,10,10,100,10,20,10,10,10,10,10,10,10,10,10,10,10,0,10,10,10,0,0,20,10,10,10,10,10,0,10,10,10,10,10,10,20,20,10,10,10,10,10,10,10,10,10,10,10]
 
-		function evalLoop() {
-			var tslider = document.getElementById("time");
-			var toutput = document.getElementById("timeparse");
-			toutput.innerHTML = parseTime(tslider.value);
-			tslider.oninput = function() {
-				toutput.innerHTML = parseTime(this.value);
+			function evalLoop() {
+				var tslider = document.getElementById("time");
+				var toutput = document.getElementById("timeparse");
+				toutput.innerHTML = parseTime(tslider.value);
+				tslider.oninput = function() {
+					toutput.innerHTML = parseTime(this.value);
+				}
+				var outputElement = document.getElementById("output");
+				document.getElementById("formwrapper").addEventListener("input", function() {
+				outputElement.innerHTML = evalMoney({
+					world: getSelectIndices(document.getElementById("world"))[0],
+					par: evalPar(getValue("par"), getValue("world")),
+					time: evalTime(tslider.value),
+					merit: evalMerit("merits", "newobjects")
+				})
+				if(outputElement.innerHTML == 314) {
+					outputElement.style = 'color:green;font-weight:bold;'
+				} else {
+					outputElement.style += 'color:initial;font-weight:initial;'
+				}
+			  });
 			}
-			var outputElement = document.getElementById("output");
-			document.getElementById("formwrapper").addEventListener("input", function() {
-			outputElement.innerHTML = evalMoney({
-				world: getValue("world"),
-			  par: evalPar(getValue("par"), getValue("world")),
-			  time: evalTime(tslider.value),
-			  merit: getValue("merits")
-			})
-			if(outputElement.innerHTML == 314) {
-				outputElement.style = 'color:green;font-weight:bold;'
-			} else {
-				outputElement.style += 'color:initial;font-weight:initial;'
+
+			function evalMoney(iObj) {
+				var ollars = parseInt(iObj.par) + parseInt(iObj.merit) + iObj.time;
+			  if(isNaN(ollars)) {
+				return "..."
+			  }
+			  if(ollars < 0 || iObj.world == 0) {
+				ollars = 0;
+			  }
+			  return ollars
 			}
-		  });
-		}
 
-		function evalMoney(iObj) {
-			var ollars = parseInt(iObj.par) + parseInt(iObj.merit) + iObj.time;
-		  if(isNaN(ollars)) {
-			return "..."
-		  }
-		  if(ollars < 0 || iObj.world == 0) {
-			ollars = 0;
-		  }
-		  return ollars
-		}
-
-		function evalTime(t) {
-		  var cashout = -2 * t + 500;
-		  if(cashout < 0) {
-			return 0
-		  }
-		  return cashout
-		}
-
-		function evalPar(d,w) {
-			var par = MULTIPLIERS[w] * (-20 * d + 100);
-			if(par < 0) {
+			function evalTime(t) {
+			  var cashout = -2 * t + 500;
+			  if(cashout < 0) {
 				return 0
+			  }
+			  return cashout
 			}
-			return par
-		}
 
-		function getValue(id) {
-			return document.getElementById(`${id}`).value
-		}
-		
-		function parseTime(s) {
-			var ss = s % 60;
-			var mm = (s - ss) / 60;
-			var between = ""
-			if(s % 60 < 10) {
-				between = "0";
+			function evalPar(d,w) {
+				var par = MULTIPLIERS[w] * (-20 * d + 100);
+				if(par < 0) {
+					return 0
+				}
+				return par
 			}
-			return `${mm}:${between}${ss} (${s})`
-		}
-  </script>
-  <style>
-		* {
-		  font-family: sans-serif;
-		}
 
-		pre {
-		  font-family: monospace;
-		}
+			function evalMerit(id, pid) {
+				var o = 0;
+				var r = 0;
+				var newobjects = false;
+				var a = getSelectIndices(document.getElementById(`${id}`));
+				for(i = 0; i < a.length; ++i) {
+					r = MERITREWARDS[a[i]];
+					o += r;
+					if(a[i] == 48) { newobjects = true; }
+				}
+				if(newobjects) {
+					document.getElementById(pid).disabled = false;
+					var n = getValue(pid) * 10;
+					o += n;
+				} else {
+					document.getElementById(pid).disabled = true;
+				}
+				return o
+			}
 
-		.inputwrapper {
-		  float: left;
-		  padding: 10px;
-		}
+			function getValue(id) {
+				return document.getElementById(`${id}`).value
+			}
+			
+			function getSelectIndices(select) {
+			  var result = [];
+			  var options = select && select.options;
+			  var opt;
 
-		p {
-		  clear: both;
-		}
-  </style>
-</head>
-<body onload="evalLoop()">
-  <div id="formwrapper">
-    <div class="inputwrapper">
-      <label for="world">World: </label>
-      <input type="number" min="0" max="10" value="0" name="world" id="world" />
-    </div>
-    <div class="inputwrapper">
-      <label for="par">Objects - par: </label>
-      <input type="number" min="-24" max="24" value="0" name="par" id="par" />
-    </div>
-    <div class="inputwrapper">
-      <label for="time">Time: </label>
-      <input type="range" min="0" max="250" value="0" name="time" id="time" />
-	  <pre id="timeparse">Value</pre>
-    </div>
-    <div class="inputwrapper">
-      <label for="merits">Style/merit value (interim): </label>
-      <input type="number" min="0" max="995" step="5" value="0" name="merits" id="merits" />
-    </div>
-    <p>
-      <pre id="output">Value</pre>
-    </p>
-  </div>
-</body>
+			  for (var i=0, iLen=options.length; i<iLen; i++) {
+				opt = options[i];
+
+				if (opt.selected) {
+					result.push(i);
+				  // result.push(opt.value || opt.text);
+				}
+			  }
+			  return result;
+			}
+			
+			function parseTime(s) {
+				var ss = s % 60;
+				var mm = (s - ss) / 60;
+				var between = ""
+				if(s % 60 < 10) {
+					between = "0";
+				}
+				return `${mm}:${between}${ss} (${s} s)`
+			}
+		</script>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+			
+			::-webkit-scrollbar {
+				width: 9px;
+				height: 9px;
+			}
+			
+			::-webkit-scrollbar-track {
+				box-shadow: inset 0 0 3px #A77;
+				border-radius: 8px;
+			}
+			
+			::-webkit-scrollbar-thumb {
+				background: #b41;
+				border-radius: 8px;
+			}
+			
+			::-webkit-scrollbar-thumb:active {
+				background: #d35;
+			}
+
+
+			* {
+			  font-family: 'PT Sans',sans-serif;
+			}
+
+			pre {
+			  font-family: monospace;
+			  text-align: center;
+			}
+
+			.fit-contents {
+				background: #8c7;
+				border-radius: 10px;
+				max-width: 680px;
+				margin: auto;
+				padding: 5px;
+			}
+
+			.fit-contents ~ div {
+				margin-top: 20px;
+			}
+
+			.inputwrapper {
+			  float: left;
+			  padding: 5px;
+			  margin: 2px;
+			  background: #bed;
+			  border: 2px solid #080;
+			  border-radius: 10px;
+			}
+
+			p {
+			  clear: both;
+			}
+			
+			input[type="number"] {
+				width: 3em;
+				border: 1px solid #afc;
+				border-radius: 5px;
+			}
+			
+			input[disabled] {
+				color: #ccc;
+				background: #aaa;
+			}
+			
+			header,h3,footer {
+				text-align: center;
+			}
+			
+			h3 {
+				padding: 5px 0;
+				background: #fffd;
+				margin: 10px;
+				border-radius: 1em;
+			}
+		</style>
+	</head>
+	<body onload="evalLoop()">
+		<header>
+			<h1>Scribblenauts Ollar Calculator</h1>
+			<h2>by SoapAgent <span style="font-size:.5em;">(SMWAgent09AF)</span></h2>
+		</header>
+		<div id="formwrapper" class="fit-contents">
+			<h3>Input values</h3>
+			<div class="inputwrapper">
+			  <label for="world">World: </label>
+			  <select name="world" id="world">
+				<option value="0">University</option>
+				<option value="1" selected>The Gardens</option>
+				<option value="2">Metro</option>
+				<option value="3">The Peaks</option>
+				<option value="4">Ancient</option>
+				<option value="5">Shoreline</option>
+				<option value="6">Outer Wild</option>
+				<option value="7">Stunt Park</option>
+				<option value="8">Frontier</option>
+				<option value="9">Dark Hollow</option>
+				<option value="10">Mish-Mash</option>
+			  </select>
+			</div>
+			<div class="inputwrapper">
+			  <label for="par">"PAR" (negative or positive): </label>
+			  <input type="number" min="-24" max="5" value="0" name="par" id="par" />
+			</div>
+			<div class="inputwrapper">
+			  <label for="time">Time: </label>
+			  <input type="range" min="0" max="250" value="0" name="time" id="time" />
+			  <pre id="timeparse">Value</pre>
+			</div>
+			<div class="inputwrapper">
+				<label for="newobjects">New objects (unique objects counted for merit): </label>
+				<input type="number" min="1" max="20" value="1" name="newobjects" id="newobjects" disabled />
+			</div>
+			<div class="inputwrapper" style="float:right;">
+				<label for="merits">Merits:<br /></label>
+				<select name="merits" size="20" id="merits" multiple="">
+					<option>5th Cell (10)</option>
+					<option>All New (15)</option>
+					<option>Architect (10)</option>
+					<option>ARRRRRRR (10)</option>
+					<option>Audiophile (10)</option>
+					<option>Whisperer (10)</option>
+					<option>Bioterrorist (10)</option>
+					<option>Botanist (10)</option>
+					<option>Chauffeur (10)</option>
+					<option>Chef (10)</option>
+					<option>Closet (10)</option>
+					<option>Combo (15)</option>
+					<option>Cupid (10)</option>
+					<option>Shoveler (10)</option>
+					<option>Sea Two (10)</option>
+					<option>Knight School (10)</option>
+					<option>Electrolysis (10)</option>
+					<option>Elemental (10)</option>
+					<option>Entertainer (10)</option>
+					<option>Entomologist (10)</option>
+					<option>Environmentalist (10)</option>
+					<option>Explosive (10)</option>
+					<option>Exterminator (10)</option>
+					<option>Fantasynovel (10)</option>
+					<option>Fashion Designer (50)</option>
+					<option>Firefighter (10)</option>
+					<option>Genius (10)</option>
+					<option>Glutton (10)</option>
+					<option>Gold Digger (10)</option>
+					<option>Grab And Go (10)</option>
+					<option>Haxxor (100)</option>
+					<option>Healer (10)</option>
+					<option>Herpetologist (20)</option>
+					<option>Infected (10)</option>
+					<option>Decorator (10)</option>
+					<option>Janitor (10)</option>
+					<option>Jockey (10)</option>
+					<option>Joust (10)</option>
+					<option>Luddite (10)</option>
+					<option>Lumberjack (10)</option>
+					<option>Madhatter (10)</option>
+					<option>Magician (10)</option>
+					<option>Marine Biologist (10)</option>
+					<option>Mechanic (10)</option>
+					<option>Messiah (0)</option>
+					<option>Militant (10)</option>
+					<option>Miner 49er (10)</option>
+					<option>Miser (10)</option>
+					<option>New Object (10+)</option>
+					<option>Novice Angler (0)</option>
+					<option>No Weapons (20)</option>
+					<option>Old School (10)</option>
+					<option>Organ Donor (10)</option>
+					<option>Ornithologist (10)</option>
+					<option>Paleontologist (10)</option>
+					<option>Pariah (10)</option>
+					<option>Pi (0)</option>
+					<option>Picasso (10)</option>
+					<option>Pilot (10)</option>
+					<option>Prodigy (10)</option>
+					<option>Pyromaniac (10)</option>
+					<option>Reanimator (10)</option>
+					<option>Roped In (10)</option>
+					<option>Russian Doll (20)</option>
+					<option>Savior (20)</option>
+					<option>Series of Tubes (10)</option>
+					<option>Smasher (10)</option>
+					<option>Smuggler (10)</option>
+					<option>Split Personality (10)</option>
+					<option>Stealth (10)</option>
+					<option>Sweet Tooth (10)</option>
+					<option>Tooling Around (10)</option>
+					<option>Washington (10)</option>
+					<option>Water Jockey (10)</option>
+					<option>Humanitarian (10)</option>
+					<option>Zookeeper (10)</option>
+				</select>
+			</div>
+			<p style="clear:both;"></p>
+		</div>
+		<div class="fit-contents">
+			<h3>Ollars: <span id="output" style="font-weight:initial;">600</span></h3>
+		</div>
+		<footer>
+			<p>Copyright &copy; 2021</p>
+		</footer>
+	</body>
 </html>
