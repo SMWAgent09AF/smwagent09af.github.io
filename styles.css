@@ -64,7 +64,7 @@ p.footnote{color:#900;font-family:'IBM Plex Sans Condensed','Verdana',sans-serif
 
 /* Table */
 
-table :target{border:2px dashed #ed0c;border-left:2px solid red;}
+table :target{border:2px dashed #ed0c;border-left:2px solid red;overflow-x:auto;}
 
 table {
 	table-layout: fixed;
