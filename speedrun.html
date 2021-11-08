@@ -2,42 +2,14 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="author" content="SMWAgent09AF">
+		<meta name="author" content="SoapAgent">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="styles.css">
-		<title>Speedruns | SMWAgent09AF Plus</title>
-		<script type="text/javascript">
-			function fillLinks() {
-				var links = document.getElementsByClassName('linkfill');
-				var t = '';
-				for (var i = 0; i < links.length; i++) {
-				   fillL(links[i]);
-				}
-			}
-			
-			function fillL(el) {
-				t = el.innerHTML.split('~')[1];
-				el.setAttribute('href', 'https://speedrun.com/' + t);
-				el.setAttribute('target', '_blank');
-				el.innerHTML = el.innerHTML.split('~')[0];
-			}
-		</script>
+		<script src="./pagemanip.js"></script>
 	</head>
-	<body class="flex-container" onload="fillLinks()">
-		<header class="flex header speedrun">
-			<h1 class="body-title"><span style="color:red;">SMW</span><span style="color:#509;">Agent</span><span style="color:#EC1;">09AF</span> Plus</h1>
-			<hr />
-			<h2 class="pagename">Speedruns</h2>
-		</header>
-		<nav class="flex nav speedrun">
-			<button class="nav-button"><a href="index.html">Home</a></button>
-			<button class="nav-button"><a href="contact.html">Contact me</a></button>
-			<button class="nav-button current">Speedruns</button>
-			<button class="nav-button"><a href="chathacks.html">Chat Hacks Information</a></button>
-			<button class="nav-button"><a href="kssrandomizer.html">KSS Randomizer RTA</a></button>
-		</nav>
+	<body class="flex-container" onload="fillLinks();fillTop(['Speedruns','speedrun'])">
 		<div class="flex body contact">
 			<em class="aside" id="last-updated">page last updated 31 Oct 2021</em>
 			<p class="intro"><strong>Relevant links:</strong></p>

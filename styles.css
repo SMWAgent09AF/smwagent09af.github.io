@@ -45,7 +45,7 @@ ul.nolabel > li{list-style-type:none;padding:2px;}
 .nav-button{border-radius:3px;}
 .nav-button:nth-child(even){background:#BEB;}
 .nav-button:nth-child(odd){background:#ACE;}
-.nav-button.current{opacity:.6;border-color:transparent;border-radius:6px;}
+.nav-button.current{opacity:.6;border-color:transparent;border-radius:6px;pointer-events:none;}
 .aside,.aside * {font-family:'IBM Plex Sans Condensed','Verdana',sans-serif;font-size:11px!important;}
 span.nospam{display:none;}
 span.status-check{font-size:16px;font-weight:999;color:#090;}
