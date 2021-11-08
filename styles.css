@@ -47,7 +47,7 @@ ul.nolabel > li{list-style-type:none;padding:2px;}
 .nav-button:nth-child(odd){background:#ACE;}
 .nav-button.current{opacity:.6;border-color:transparent;border-radius:6px;pointer-events:none;}
 .aside,.aside * {font-family:'IBM Plex Sans Condensed','Verdana',sans-serif;font-size:11px!important;}
-span.nospam{display:none;}
+span.nospam{font-size:0px;}
 span.status-check{font-size:16px;font-weight:999;color:#090;}
 code{user-select:all;cursor:copy;background:#DDD;font-family:'IBM Plex Mono','Courier',monospace;color:#282;}
 pre{background:#FFF;font-family:'IBM Plex Mono','Courier',monospace;color:#200;overflow:auto;}
