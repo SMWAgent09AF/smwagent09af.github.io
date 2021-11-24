@@ -7,7 +7,7 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript">
-			const MULTIPLIERS = [0,1,3,6,7,8,4,9,10,5,11]
+			const WORLDS = JSON.parse('{\"data\":[{\"name\":\"University\",\"multiplier\":0,\"pars\":[[3,3,3,3,3,3,3,3,3,3,3],[3,3,3,3,3,3,3,3,3,3,3]]},{\"name\":\"The Gardens\",\"multiplier\":1,\"pars\":[[3,3,2,4,2,2,2,3,2,3,4],[3,2,2,2,3,3,4,4,4,4,3]]},{\"name\":\"Metro\",\"multiplier\":3,\"pars\":[[2,2,2,2,4,3,3,3,3,4,4],[3,3,4,4,2,6,4,5,7,4,3]]},{\"name\":\"The Peaks\",\"multiplier\":6,\"pars\":[[2,2,3,4,3,4,3,3,4,3,4],[3,4,4,4,3,4,5,3,2,4,8]]},{\"name\":\"Ancient\",\"multiplier\":7,\"pars\":[[3,3,3,3,3,4,3,4,4,7,8],[3,6,5,3,4,2,4,5,3,3,3]]},{\"name\":\"Shoreline\",\"multiplier\":8,\"pars\":[[2,3,2,2,3,2,3,5,4,6,4],[3,3,4,4,4,5,5,4,5,6,5]]},{\"name\":\"Outer Wild\",\"multiplier\":4,\"pars\":[[5,3,3,5,3,5,5,5,4,5,6],[3,3,3,5,7,5,4,3,6,6,8]]},{\"name\":\"Stunt Park\",\"multiplier\":9,\"pars\":[[5,3,4,3,3,6,4,4,4,7,4],[4,4,4,3,4,7,5,3,9,4,8]]},{\"name\":\"Frontier\",\"multiplier\":10,\"pars\":[[3,3,4,4,7,3,4,3,5,8,4],[5,4,4,6,4,5,4,6,6,7,5]]},{\"name\":\"Dark Hollow\",\"multiplier\":5,\"pars\":[[5,4,3,3,3,5,5,4,4,4,4],[4,2,7,5,6,5,6,8,7,5,8]]},{\"name\":\"Mish-Mash\",\"multiplier\":11,\"pars\":[[2,3,3,3,3,4,5,6,3,4,1],[4,5,6,2,2,5,5,8,6,4,24]]}]}');
 			const MERITREWARDS = [10,15,10,10,10,10,10,10,10,10,10,15,10,10,10,10,10,10,10,10,10,10,10,10,50,10,10,10,10,10,100,10,20,10,10,10,10,10,10,10,10,10,10,10,0,10,10,10,0,0,20,10,10,10,10,10,0,10,10,10,10,10,10,20,20,10,10,10,10,10,10,10,10,10,10,10]
 
 			function evalLoop() {
@@ -19,18 +19,26 @@
 				}
 				var outputElement = document.getElementById("output");
 				document.getElementById("formwrapper").addEventListener("input", function() {
-				outputElement.innerHTML = evalMoney({
-					world: getSelectIndices(document.getElementById("world"))[0],
-					par: evalPar(getValue("par"), getValue("world")),
-					time: evalTime(tslider.value),
-					merit: evalMerit("merits", "newobjects")
-				})
-				if(outputElement.innerHTML == 314) {
-					outputElement.style = 'color:green;font-weight:bold;'
-				} else {
-					outputElement.style += 'color:initial;font-weight:initial;'
+					checkParSlider(document.getElementById("par"));
+					isWorldZero(getValue("world"), ["leveltype","par","time","merits"]);
+					outputElement.innerHTML = evalMoney({
+						world: getSelectIndices(document.getElementById("world"))[0],
+						par: evalPar(getValue("par"), getValue("world")),
+						time: evalTime(tslider.value),
+						merit: evalMerit("merits", "newobjects")
+					})
+					if(outputElement.innerHTML == 314) {
+						outputElement.style = 'color:green;font-weight:bold;'
+					} else {
+						outputElement.style += 'color:initial;font-weight:initial;'
+					}
+				});
+				var inputWraps = document.getElementsByClassName("inputwrapper")
+				for (var i=0; i<inputWraps.length; i++) {
+					inputWraps[i].addEventListener("mouseover", function() {
+						document.getElementById("tooltip").innerHTML = this.title;
+					});
 				}
-			  });
 			}
 
 			function evalMoney(iObj) {
@@ -51,9 +59,17 @@
 			  }
 			  return cashout
 			}
-
+			
+			function evalLevel(t,w,l) {
+				var tsa = ['&#x1F9E9;','&#x1F4A5;'];
+				if (w == 0) { tsa = ['T','T'] }
+				var levelpar = WORLDS.data[w].pars[t][l];
+				document.getElementById("levelOutput").innerHTML = `${tsa[t]}${w}-${l+1}`;
+				return levelpar
+			}
+			
 			function evalPar(d,w) {
-				var par = MULTIPLIERS[w] * (-20 * d + 100);
+				var par = WORLDS.data[w].multiplier * (-20 * d + 100);
 				if(par < 0) {
 					return 0
 				}
@@ -92,12 +108,28 @@
 			  for (var i=0, iLen=options.length; i<iLen; i++) {
 				opt = options[i];
 
-				if (opt.selected) {
-					result.push(i);
-				  // result.push(opt.value || opt.text);
-				}
+				if (opt.selected) { result.push(i); }
 			  }
 			  return result;
+			}
+			
+			function checkParSlider(el) {
+				var mp = -(evalLevel(getValue("leveltype"), getValue("world"), parseInt(getValue("level")) - 1));
+				el.setAttribute("min", mp);
+				if (el.value < mp) { el.value = mp; }
+				if (el.value > 5) { el.value = 5; }
+			}
+			
+			function isWorldZero(w, elA) {
+				if (w == 0) {
+					for (var i=0; i<elA.length; i++) {
+						document.getElementById(elA[i]).disabled = true;
+					}
+				} else {
+					for (var i=0; i<elA.length; i++) {
+						document.getElementById(elA[i]).disabled = false;
+					}
+				}
 			}
 			
 			function parseTime(s) {
@@ -114,8 +146,8 @@
 			@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 			
 			::-webkit-scrollbar {
-				width: 9px;
-				height: 9px;
+				width: 12px;
+
 			}
 			
 			::-webkit-scrollbar-track {
@@ -161,6 +193,12 @@
 			  background: #bed;
 			  border: 2px solid #080;
 			  border-radius: 10px;
+			  min-height: 6em;
+			}
+			
+			label {
+			  display: block;
+			  text-align: center;
 			}
 
 			p {
@@ -171,6 +209,8 @@
 				width: 3em;
 				border: 1px solid #afc;
 				border-radius: 5px;
+				display: block;
+				margin: auto;
 			}
 			
 			input[disabled] {
@@ -192,43 +232,67 @@
 	</head>
 	<body onload="evalLoop()">
 		<header>
-			<h1>Scribblenauts Ollar Calculator</h1>
+			<h1>Scribblenauts Ollar Calculator v0.2</h1>
 			<h2>by SoapAgent <span style="font-size:.5em;">(SMWAgent09AF)</span></h2>
 		</header>
 		<div id="formwrapper" class="fit-contents">
 			<h3>Input values</h3>
-			<div class="inputwrapper">
-			  <label for="world">World: </label>
-			  <select name="world" id="world">
-				<option value="0">University</option>
-				<option value="1" selected>The Gardens</option>
-				<option value="2">Metro</option>
-				<option value="3">The Peaks</option>
-				<option value="4">Ancient</option>
-				<option value="5">Shoreline</option>
-				<option value="6">Outer Wild</option>
-				<option value="7">Stunt Park</option>
-				<option value="8">Frontier</option>
-				<option value="9">Dark Hollow</option>
-				<option value="10">Mish-Mash</option>
-			  </select>
+			<div class="inputwrapper" title="Use the dropdowns to select the relevant level (Puzzle/Action, world, level). The world you are in determines how valuable the Par is (due to each world having a unique 'multiplier'), and the specific level you select determines how low the Par can be.">
+			  <label for="levelselection">Level: </label>
+			  <form name="levelselection" id="levelselection">
+				  <select name="leveltype" id="leveltype">
+					<option value="0" selected>P</option>
+					<option value="1">A</option>
+				  </select>
+				  <select name="world" id="world">
+					<option value="0">0</option>
+					<option value="1" selected>1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				  </select>
+				  <span>-</span>
+				  <select name="level" id="level">
+					<option value="1" selected>1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+				  </select>
+			  </form>
+			  <p><pre id="levelOutput">&#x1F9E9;1-1</pre></p>
 			</div>
-			<div class="inputwrapper">
+			<div class="inputwrapper" title="This is the PAR value given at the end of a level, i.e. Level Par minus total objects summoned.">
 			  <label for="par">"PAR" (negative or positive): </label>
 			  <input type="number" min="-24" max="5" value="0" name="par" id="par" />
 			</div>
-			<div class="inputwrapper">
+			<div class="inputwrapper" title="This is the amount of seconds spent in the level. Time starts from pressing OK/Start to start a level, and ends as soon as Maxwell picks up the Starite, only pausing when the game is loading/lagging. To change the value, drag the slider or select it and use the arrow keys.">
 			  <label for="time">Time: </label>
 			  <input type="range" min="0" max="250" value="0" name="time" id="time" />
 			  <pre id="timeparse">Value</pre>
 			</div>
-			<div class="inputwrapper">
-				<label for="newobjects">New objects (unique objects counted for merit): </label>
-				<input type="number" min="1" max="20" value="1" name="newobjects" id="newobjects" disabled />
+			<div class="inputwrapper" style="float:right;" title="If you get the New Objects merit, enter the amount of unique new objects you summoned in this box. (Even if you summon a new object multiple times, you only get credit for it once.) This value, multiplied by 10, is the amount of Ollars the New Object merit is worth.">
+				<label for="newobjects">New objects: </label>
+				<input type="number" min="1" max="50" value="1" name="newobjects" id="newobjects" disabled />
 			</div>
-			<div class="inputwrapper" style="float:right;">
+			<div id="tooltip" class="inputwrapper" style="float:left;width:21em;" title="Hover over a container for help.">
+				Hover over a container for help.
+			</div>
+			<div class="inputwrapper" style="float:right;" title="Select all the Merits you got in this list. To select multiple on desktop, hold Ctrl/&#x2318; while clicking the desired options. On most mobile browsers, simply tap inside the box to open an intuitive selection menu.">
 				<label for="merits">Merits:<br /></label>
-				<select name="merits" size="20" id="merits" multiple="">
+				<select name="merits" size="15" id="merits" style="resize:vertical;min-height:4em;max-height:90em;" multiple>
 					<option>5th Cell (10)</option>
 					<option>All New (15)</option>
 					<option>Architect (10)</option>
