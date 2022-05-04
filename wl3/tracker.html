@@ -1,0 +1,5968 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Wario Land 3 Rando Location Organizer | SMWAgent09AF Plus</title>
+		<style>
+			h2,
+			h3,
+			h4,
+			p {
+			color: white;
+			}
+			a {
+			color: #4cf;
+			}
+			body {
+			background: #023;
+			}
+			* {
+			font-family: 'Arial', 'Helvetica', sans-serif;
+			}
+			ul {
+			columns: 4em 4;
+			display: inline-block;
+			list-style-type: none;
+			padding-left: 10px;
+			}
+			div#north, div#south {
+			border: 1px ridge #000;
+			border-radius: 10px;
+			padding: 5px;
+			background: #3336;
+			}
+			div#west, div#east {
+			border: 1px ridge #000;
+			border-radius: 10px;
+			padding: 5px;
+			background: #0006;
+			}
+			textarea {
+			height: 4em;
+			width: 16em;
+			display: block;
+			font-size: 1em;
+			background: #fff0;
+			color: #fff;
+			}
+			select {
+			background: #eddc;
+			}
+			.grey {
+			border: 3px solid grey;
+			}
+			.red {
+			border: 3px solid red;
+			}
+			.green {
+			border: 3px solid green;
+			}
+			.blue {
+			border: 3px solid blue;
+			}
+			select.grey, select.red, select.green, select.blue {
+			width: 13em;
+			}
+			.checkgrey {
+			outline:2px ridge grey
+			}
+			.checkred {
+			outline:2px ridge red
+			}
+			.checkgreen {
+			outline:2px ridge green
+			}
+			.checkblue {
+			outline:2px ridge blue
+			}
+		</style>
+	</head>
+	<body>
+		<p style="font-size:.8em;">back to <a href="/index.html">main page</a></p>
+		<h2 id="top">
+			Basic WL3 Rando Tracker (Location organizer)
+		</h2>
+		<h4>
+			by SoapAgent
+		</h4>
+		<p>
+			This serves as a simple, barebones tracker for use with the <a href="https://github.com/AaronDobbe/wl3-randomizer" target="_blank">Wario Land 3 randomizer by AaronDobbe</a>, specifically for key shuffle (also includes a couple helpful tools for map shuffle). Everything is contained in this single HTML file, so you may download it and use it offline with ease. Read <a href="customizingtracker.html">here</a> for more information on how you can customize the tracker.
+		</p>
+		<p>
+			There is no scripting or other special tools to assist with logical decisions. The only service this tracker provides is a place to note where keys are in levels, the locations of levels on the map for map shuffle, two checkboxes for every level (in the contents) if you want to indicate accessibility and exhaustion/completion of the level, a checkbox for every chest (in the individual level entries) to indicate collection/absence of a chest, and a textbox for every level in case you want to note something. <strong>Use as many or as few of these features as you like.</strong>
+		</p>
+		<p>
+			Depending on how your browser/HTML renderer handles form elements, your input may or may not disappear if you navigate away from this page or refresh. I advise you to know how this works in advance, to avoid accidental clearing of any important information.
+		</p>
+		<hr />
+		<h3 id="contents">
+			Levels
+		</h3>
+		<ul>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#n1">
+				N1
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#n2">
+				N2
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#n3">
+				N3
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#n4">
+				N4
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#n5">
+				N5
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#n6">
+				N6
+				</a>
+			</li>
+			<br />
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#w1">
+				W1
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#w2">
+				W2
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#w3">
+				W3
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#w4">
+				W4
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#w5">
+				W5
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#w6">
+				W6
+				</a>
+			</li>
+			<br />
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#s1">
+				S1
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#s2">
+				S2
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#s3">
+				S3
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#s4">
+				S4
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#s5">
+				S5
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#s6">
+				S6
+				</a>
+			</li>
+			<br />
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e1">
+				E1
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e2">
+				E2
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e3">
+				E3
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e4">
+				E4
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e5">
+				E5
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e6">
+				E6
+				</a>
+			</li>
+			<li>
+				<input type="checkbox" /><input type="checkbox" />
+				<a href="#e7">
+				E7
+				</a>
+			</li>
+		</ul>
+		<hr />
+		<div id="north">
+			<div id="n1">
+				<h3>
+					N1 Out of the Woods
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						first room coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						green current coin
+					</option>
+					<option>
+						red shortcut coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green bounce coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						first room coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						green current coin
+					</option>
+					<option>
+						red shortcut coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green bounce coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						first room coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						green current coin
+					</option>
+					<option>
+						red shortcut coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green bounce coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						first room coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						green current coin
+					</option>
+					<option>
+						red shortcut coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green bounce coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="n2">
+				<h3>
+					N2 The Peaceful Village
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						first coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red pipe coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue hammerbot coin
+					</option>
+					<option>
+						blue left coin
+					</option>
+					<option>
+						blue middle coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						below green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green water coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						first coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red pipe coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue hammerbot coin
+					</option>
+					<option>
+						blue left coin
+					</option>
+					<option>
+						blue middle coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						below green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green water coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						first coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red pipe coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue hammerbot coin
+					</option>
+					<option>
+						blue left coin
+					</option>
+					<option>
+						blue middle coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						below green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green water coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						first coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red pipe coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue hammerbot coin
+					</option>
+					<option>
+						blue left coin
+					</option>
+					<option>
+						blue middle coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						below green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green water coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="n3">
+				<h3>
+					N3 The Vast Plain
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						vine coin
+					</option>
+					<option>
+						green grabbot coin
+					</option>
+					<option>
+						green high coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						ladder coin
+					</option>
+					<option>
+						spike coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue fall coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						vine coin
+					</option>
+					<option>
+						green grabbot coin
+					</option>
+					<option>
+						green high coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						ladder coin
+					</option>
+					<option>
+						spike coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue fall coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						vine coin
+					</option>
+					<option>
+						green grabbot coin
+					</option>
+					<option>
+						green high coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						ladder coin
+					</option>
+					<option>
+						spike coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue fall coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						vine coin
+					</option>
+					<option>
+						green grabbot coin
+					</option>
+					<option>
+						green high coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						ladder coin
+					</option>
+					<option>
+						spike coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue fall coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="n4">
+				<h3>
+					N4 Bank of the Wild River
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue alcove coin
+					</option>
+					<option>
+						blue bottom coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						garlic/throw coin
+					</option>
+					<option>
+						fire coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green coin 1
+					</option>
+					<option>
+						green coin 2
+					</option>
+					<option>
+						green coin 3
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue alcove coin
+					</option>
+					<option>
+						blue bottom coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						garlic/throw coin
+					</option>
+					<option>
+						fire coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green coin 1
+					</option>
+					<option>
+						green coin 2
+					</option>
+					<option>
+						green coin 3
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue alcove coin
+					</option>
+					<option>
+						blue bottom coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						garlic/throw coin
+					</option>
+					<option>
+						fire coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green coin 1
+					</option>
+					<option>
+						green coin 2
+					</option>
+					<option>
+						green coin 3
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue alcove coin
+					</option>
+					<option>
+						blue bottom coin
+					</option>
+					<option>
+						treetops coin
+					</option>
+					<option>
+						garlic/throw coin
+					</option>
+					<option>
+						fire coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green coin 1
+					</option>
+					<option>
+						green coin 2
+					</option>
+					<option>
+						green coin 3
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="n5">
+				<h3>
+					N5 The Tidal Coast
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						top left coin
+					</option>
+					<option>
+						flat fall coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						above grey coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						right water coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						below red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						right blue coin
+					</option>
+					<option>
+						left blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						top left coin
+					</option>
+					<option>
+						flat fall coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						above grey coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						right water coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						below red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						right blue coin
+					</option>
+					<option>
+						left blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						top left coin
+					</option>
+					<option>
+						flat fall coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						above grey coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						right water coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						below red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						right blue coin
+					</option>
+					<option>
+						left blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						top left coin
+					</option>
+					<option>
+						flat fall coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						above grey coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						right water coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						below red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						right blue coin
+					</option>
+					<option>
+						left blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="n6">
+				<h3>
+					N6 Sea Turtle Rocks
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						left inner coin
+					</option>
+					<option>
+						right inner coin
+					</option>
+					<option>
+						center inner coin
+					</option>
+					<option>
+						bottom right coin
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue car coin
+					</option>
+					<option>
+						blue dash coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						left inner coin
+					</option>
+					<option>
+						right inner coin
+					</option>
+					<option>
+						center inner coin
+					</option>
+					<option>
+						bottom right coin
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue car coin
+					</option>
+					<option>
+						blue dash coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						left inner coin
+					</option>
+					<option>
+						right inner coin
+					</option>
+					<option>
+						center inner coin
+					</option>
+					<option>
+						bottom right coin
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue car coin
+					</option>
+					<option>
+						blue dash coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						left inner coin
+					</option>
+					<option>
+						right inner coin
+					</option>
+					<option>
+						center inner coin
+					</option>
+					<option>
+						bottom right coin
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue car coin
+					</option>
+					<option>
+						blue dash coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+		</div>
+		<hr />
+		<div id="west">
+			<div id="w1">
+				<h3>
+					W1 Desert Ruins
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						main center coin
+					</option>
+					<option>
+						main sand coin
+					</option>
+					<option>
+						day top coin
+					</option>
+					<option>
+						day middle coin
+					</option>
+					<option>
+						day bottom coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						night bottom coin
+					</option>
+					<option>
+						blue bat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						main center coin
+					</option>
+					<option>
+						main sand coin
+					</option>
+					<option>
+						day top coin
+					</option>
+					<option>
+						day middle coin
+					</option>
+					<option>
+						day bottom coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						night bottom coin
+					</option>
+					<option>
+						blue bat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						main center coin
+					</option>
+					<option>
+						main sand coin
+					</option>
+					<option>
+						day top coin
+					</option>
+					<option>
+						day middle coin
+					</option>
+					<option>
+						day bottom coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						night bottom coin
+					</option>
+					<option>
+						blue bat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						main center coin
+					</option>
+					<option>
+						main sand coin
+					</option>
+					<option>
+						day top coin
+					</option>
+					<option>
+						day middle coin
+					</option>
+					<option>
+						day bottom coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						night bottom coin
+					</option>
+					<option>
+						blue bat coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="w2">
+				<h3>
+					W2 The Volcano's Base
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						left roll coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						ladder pound coin
+					</option>
+					<option>
+						wagon top coin
+					</option>
+					<option>
+						wagon bottom coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						dollboy fail coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						left roll coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						ladder pound coin
+					</option>
+					<option>
+						wagon top coin
+					</option>
+					<option>
+						wagon bottom coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						dollboy fail coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						left roll coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						ladder pound coin
+					</option>
+					<option>
+						wagon top coin
+					</option>
+					<option>
+						wagon bottom coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						dollboy fail coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						left roll coin
+					</option>
+					<option>
+						right roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						ladder pound coin
+					</option>
+					<option>
+						wagon top coin
+					</option>
+					<option>
+						wagon bottom coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						dollboy fail coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="w3">
+				<h3>
+					W3 The Pool of Rain
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						red vine coin
+					</option>
+					<option>
+						red leaf coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						pool spike coin
+					</option>
+					<option>
+						pool current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green UL coin
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green L coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						red vine coin
+					</option>
+					<option>
+						red leaf coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						pool spike coin
+					</option>
+					<option>
+						pool current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green UL coin
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green L coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						red vine coin
+					</option>
+					<option>
+						red leaf coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						pool spike coin
+					</option>
+					<option>
+						pool current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green UL coin
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green L coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						red vine coin
+					</option>
+					<option>
+						red leaf coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						pool spike coin
+					</option>
+					<option>
+						pool current coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green UL coin
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green L coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="w4">
+				<h3>
+					W4 A Town In Chaos
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue pound coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey zombie coin
+					</option>
+					<option>
+						sky coin
+					</option>
+					<option>
+						throw switch coin
+					</option>
+					<option>
+						pound switch coin
+					</option>
+					<option>
+						appleby coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue pound coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey zombie coin
+					</option>
+					<option>
+						sky coin
+					</option>
+					<option>
+						throw switch coin
+					</option>
+					<option>
+						pound switch coin
+					</option>
+					<option>
+						appleby coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue pound coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey zombie coin
+					</option>
+					<option>
+						sky coin
+					</option>
+					<option>
+						throw switch coin
+					</option>
+					<option>
+						pound switch coin
+					</option>
+					<option>
+						appleby coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						blue pound coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey zombie coin
+					</option>
+					<option>
+						sky coin
+					</option>
+					<option>
+						throw switch coin
+					</option>
+					<option>
+						pound switch coin
+					</option>
+					<option>
+						appleby coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="w5">
+				<h3>
+					W5 Beneath the Waves
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red hidden coin
+					</option>
+					<option>
+						red high coin L
+					</option>
+					<option>
+						red high coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						chest area coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red hidden coin
+					</option>
+					<option>
+						red high coin L
+					</option>
+					<option>
+						red high coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						chest area coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red hidden coin
+					</option>
+					<option>
+						red high coin L
+					</option>
+					<option>
+						red high coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						chest area coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red hidden coin
+					</option>
+					<option>
+						red high coin L
+					</option>
+					<option>
+						red high coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						chest area coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="w6">
+				<h3>
+					W6 The West Crater
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						entry bounce coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						rust block coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						entry bounce coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						rust block coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						entry bounce coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						rust block coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						entry bounce coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green C coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						blue fat coin
+					</option>
+					<option>
+						blue throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						rust block coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+		</div>
+		<hr />
+		<div id="south">
+			<div id="s1">
+				<h3>
+					S1 The Grasslands
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						above red coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						blue bounce coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						above red coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						blue bounce coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						above red coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						blue bounce coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey coin
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						above red coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue hammer coin
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						blue bounce coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="s2">
+				<h3>
+					S2 The Big Bridge
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						swim coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						above blue key coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue blocks coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red crouch coin
+					</option>
+					<option>
+						red blocks coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						swim coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						above blue key coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue blocks coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red crouch coin
+					</option>
+					<option>
+						red blocks coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						swim coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						above blue key coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue blocks coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red crouch coin
+					</option>
+					<option>
+						red blocks coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						swim coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						above blue key coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue blocks coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						red crouch coin
+					</option>
+					<option>
+						red blocks coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="s3">
+				<h3>
+					S3 Tower of Revival
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						red switch coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey float coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						above blue coin
+					</option>
+					<option>
+						blue key coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						red switch coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey float coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						above blue coin
+					</option>
+					<option>
+						blue key coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						red switch coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey float coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						above blue coin
+					</option>
+					<option>
+						blue key coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						red switch coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey float coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						above blue coin
+					</option>
+					<option>
+						blue key coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="s4">
+				<h3>
+					S4 The Steep Canyon
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						foot coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey roll coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						owl coin DR
+					</option>
+					<option>
+						owl coin C
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue golf coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						foot coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey roll coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						owl coin DR
+					</option>
+					<option>
+						owl coin C
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue golf coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						foot coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey roll coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						owl coin DR
+					</option>
+					<option>
+						owl coin C
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue golf coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						foot coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey roll coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red float coin
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						owl coin DR
+					</option>
+					<option>
+						owl coin C
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue golf coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue roll coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="s5">
+				<h3>
+					S5 Cave of Flames
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red fat coin
+					</option>
+					<option>
+						grey bounce coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						fire/hammer coin
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue shaft coin
+					</option>
+					<option>
+						outside shaft coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue thwomp coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red fat coin
+					</option>
+					<option>
+						grey bounce coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						fire/hammer coin
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue shaft coin
+					</option>
+					<option>
+						outside shaft coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue thwomp coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red fat coin
+					</option>
+					<option>
+						grey bounce coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						fire/hammer coin
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue shaft coin
+					</option>
+					<option>
+						outside shaft coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue thwomp coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						red fat coin
+					</option>
+					<option>
+						grey bounce coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						fire/hammer coin
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue shaft coin
+					</option>
+					<option>
+						outside shaft coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue thwomp coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="s6">
+				<h3>
+					S6 Above the Clouds
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						golf coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey fall coin
+					</option>
+					<option>
+						grey rise coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						below balloon coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						green CL coin
+					</option>
+					<option>
+						green bottom coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						golf coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey fall coin
+					</option>
+					<option>
+						grey rise coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						below balloon coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						green CL coin
+					</option>
+					<option>
+						green bottom coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						golf coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey fall coin
+					</option>
+					<option>
+						grey rise coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						below balloon coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						green CL coin
+					</option>
+					<option>
+						green bottom coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						golf coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey fall coin
+					</option>
+					<option>
+						grey rise coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red coin
+					</option>
+					<option>
+						below balloon coin
+					</option>
+					<option>
+						green UR coin
+					</option>
+					<option>
+						green CL coin
+					</option>
+					<option>
+						green bottom coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+		</div>
+		<hr />
+		<div id="east">
+			<div id="e1">
+				<h3>
+					E1 The Stagnant Swamp
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						muddee fail coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						above rat coin
+					</option>
+					<option>
+						zipline coin C
+					</option>
+					<option>
+						zipline coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue tree coin
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						muddee fail coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						above rat coin
+					</option>
+					<option>
+						zipline coin C
+					</option>
+					<option>
+						zipline coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue tree coin
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						muddee fail coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						above rat coin
+					</option>
+					<option>
+						zipline coin C
+					</option>
+					<option>
+						zipline coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue tree coin
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						muddee fail coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green key coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						above rat coin
+					</option>
+					<option>
+						zipline coin C
+					</option>
+					<option>
+						zipline coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue tree coin
+					</option>
+					<option>
+						blue float coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="e2">
+				<h3>
+					E2 The Frigid Sea
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						red roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						green switch coin
+					</option>
+					<option>
+						green fall coin
+					</option>
+					<option>
+						rock jump coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue snowball coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						red roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						green switch coin
+					</option>
+					<option>
+						green fall coin
+					</option>
+					<option>
+						rock jump coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue snowball coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						red roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						green switch coin
+					</option>
+					<option>
+						green fall coin
+					</option>
+					<option>
+						rock jump coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue snowball coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						red roll coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red key coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						block maze coin
+					</option>
+					<option>
+						green switch coin
+					</option>
+					<option>
+						green fall coin
+					</option>
+					<option>
+						rock jump coin
+					</option>
+					<option>
+						blue current coin
+					</option>
+					<option>
+						blue snowball coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="e3">
+				<h3>
+					E3 Castle of Illusions
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						entry zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						outdoors L coin
+					</option>
+					<option>
+						outdoors R coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						spring L coin
+					</option>
+					<option>
+						spring R coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue DL coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						entry zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						outdoors L coin
+					</option>
+					<option>
+						outdoors R coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						spring L coin
+					</option>
+					<option>
+						spring R coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue DL coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						entry zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						outdoors L coin
+					</option>
+					<option>
+						outdoors R coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						spring L coin
+					</option>
+					<option>
+						spring R coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue DL coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						entry zombie coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						outdoors L coin
+					</option>
+					<option>
+						outdoors R coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						spring L coin
+					</option>
+					<option>
+						spring R coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green coin
+					</option>
+					<option>
+						blue DL coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="e4">
+				<h3>
+					E4 The Colossal Hole
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						UL coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green fail coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green throw coin
+					</option>
+					<option>
+						top roll coin
+					</option>
+					<option>
+						bottom roll coin
+					</option>
+					<option>
+						float/owl coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						UL coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green fail coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green throw coin
+					</option>
+					<option>
+						top roll coin
+					</option>
+					<option>
+						bottom roll coin
+					</option>
+					<option>
+						float/owl coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						UL coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green fail coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green throw coin
+					</option>
+					<option>
+						top roll coin
+					</option>
+					<option>
+						bottom roll coin
+					</option>
+					<option>
+						float/owl coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						UL coin
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						green fail coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green throw coin
+					</option>
+					<option>
+						top roll coin
+					</option>
+					<option>
+						bottom roll coin
+					</option>
+					<option>
+						float/owl coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red chest coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue chest coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="e5">
+				<h3>
+					E5 The Warped Void
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey spring coin
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red normal coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						bear dodge coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue UL coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey spring coin
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red normal coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						bear dodge coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue UL coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey spring coin
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red normal coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						bear dodge coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue UL coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey throw coin
+					</option>
+					<option>
+						grey spring coin
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red normal coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green chest coin
+					</option>
+					<option>
+						bear dodge coin
+					</option>
+					<option>
+						blue UR coin
+					</option>
+					<option>
+						blue UL coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="e6">
+				<h3>
+					E6 The East Crater
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						top coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green wind coin
+					</option>
+					<option>
+						blue coin L
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red throw coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						top coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green wind coin
+					</option>
+					<option>
+						blue coin L
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red throw coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						top coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green wind coin
+					</option>
+					<option>
+						blue coin L
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red throw coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						top coin
+					</option>
+					<option>
+						outside green coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						green wind coin
+					</option>
+					<option>
+						blue coin L
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin R
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey chest coin
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red flat coin
+					</option>
+					<option>
+						red throw coin
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+			<div id="e7">
+				<h3>
+					E7 Forest of Fear
+				</h3>
+				<select>
+					<option>
+						?
+					</option>
+					<option>
+						N
+					</option>
+					<option>
+						W
+					</option>
+					<option>
+						S
+					</option>
+					<option>
+						E
+					</option>
+				</select>
+				<select>
+					<option>
+						1
+					</option>
+					<option>
+						2
+					</option>
+					<option>
+						3
+					</option>
+					<option>
+						4
+					</option>
+					<option>
+						5
+					</option>
+					<option>
+						6
+					</option>
+					<option>
+						7
+					</option>
+				</select>
+				<br /><input type="checkbox" class="checkgrey" /><input type="checkbox" class="checkred" /><input type="checkbox" class="checkgreen" /><input type="checkbox" class="checkblue" /><br />
+				<select class="grey">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey spike coin
+					</option>
+					<option>
+						grey blocks coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						bird bounce coin
+					</option>
+					<option>
+						red spring coin L
+					</option>
+					<option>
+						red spring coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red bounce coin
+					</option>
+					<option>
+						green garlic coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="red">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey spike coin
+					</option>
+					<option>
+						grey blocks coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						bird bounce coin
+					</option>
+					<option>
+						red spring coin L
+					</option>
+					<option>
+						red spring coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red bounce coin
+					</option>
+					<option>
+						green garlic coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="green">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey spike coin
+					</option>
+					<option>
+						grey blocks coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						bird bounce coin
+					</option>
+					<option>
+						red spring coin L
+					</option>
+					<option>
+						red spring coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red bounce coin
+					</option>
+					<option>
+						green garlic coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<select class="blue">
+					<option>
+						--
+					</option>
+					<option>
+						grey key
+					</option>
+					<option>
+						grey spike coin
+					</option>
+					<option>
+						grey blocks coin
+					</option>
+					<option>
+						blue key
+					</option>
+					<option>
+						blue coin
+					</option>
+					<option>
+						bird bounce coin
+					</option>
+					<option>
+						red spring coin L
+					</option>
+					<option>
+						red spring coin R
+					</option>
+					<option>
+						red key
+					</option>
+					<option>
+						red bounce coin
+					</option>
+					<option>
+						green garlic coin
+					</option>
+					<option>
+						green key
+					</option>
+					<option>
+						-- not needed --
+					</option>
+				</select>
+				<textarea placeholder="Notes..."></textarea>
+				<p>
+					<a href="#contents">
+					Back to level list
+					</a>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

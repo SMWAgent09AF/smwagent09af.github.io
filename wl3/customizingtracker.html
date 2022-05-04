@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Customizing the WL3 Location Organizer | SMWAgent09AF Plus</title>
+		<style>
+			body {
+				background: #023;
+			}
+
+			h2,pre,p {
+				color: #fff;
+			}
+
+			a {
+				color: #4cf;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Customizing the <a href="tracker.html">WL3 Location Organizer</a></h2>
+		<p>The tracker is contained in a single .html file. All the styling should be contained within the &lt;style&gt; tag near the top of the file, in case you want to change colors, spacing, etc.</p>
+		<p>Regarding changing the key/coin location names: This will take more effort. It would have been smarter if I used some simple javascript to populate the select boxes with their options instead of having everything duplicated within a static file, but changing it would require some extra effort that seems unnecessary since the file works as-is. However, I will share the script I used to generate the level sections. It is the following Powershell script:</p>
+<pre style="border:1px solid #fff;background:#224;user-select:all;">$mi = Read-Host &quot;Map index (i.e. n1)&quot;
+$mn = Read-Host &quot;Level name (don't include map index)&quot;
+$l1 = Read-Host &quot;l1&quot;
+$l2 = Read-Host &quot;l2&quot;
+$l3 = Read-Host &quot;l3&quot;
+$l4 = Read-Host &quot;l4&quot;
+$l5 = Read-Host &quot;l5&quot;
+$l6 = Read-Host &quot;l6&quot;
+$l7 = Read-Host &quot;l7&quot;
+$l8 = Read-Host &quot;l8&quot;
+$l9 = Read-Host &quot;l9&quot;
+$la = Read-Host &quot;la&quot;
+$lb = Read-Host &quot;lb&quot;
+$lc = Read-Host &quot;lc&quot;
+
+$mi = $mi.ToLower()
+$mn = $mi.ToUpper() + &quot; &quot; + $mn
+
+$html = &quot;&lt;div id=`&quot;{0}`&quot;&gt;
+  &lt;h3&gt;{1}&lt;/h3&gt;
+  &lt;select&gt;
+    &lt;option&gt;?&lt;/option&gt;
+    &lt;option&gt;N&lt;/option&gt;
+    &lt;option&gt;W&lt;/option&gt;
+    &lt;option&gt;S&lt;/option&gt;
+    &lt;option&gt;E&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select&gt;
+    &lt;option&gt;1&lt;/option&gt;
+    &lt;option&gt;2&lt;/option&gt;
+    &lt;option&gt;3&lt;/option&gt;
+    &lt;option&gt;4&lt;/option&gt;
+    &lt;option&gt;5&lt;/option&gt;
+    &lt;option&gt;6&lt;/option&gt;
+    &lt;option&gt;7&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br /&gt;
+  &lt;input type=`&quot;checkbox`&quot; class=`&quot;checkgrey`&quot; /&gt;&lt;input type=`&quot;checkbox`&quot; class=`&quot;checkred`&quot; /&gt;&lt;input type=`&quot;checkbox`&quot; class=`&quot;checkgreen`&quot; /&gt;&lt;input type=`&quot;checkbox`&quot; class=`&quot;checkblue`&quot; /&gt;
+  &lt;br /&gt;
+  &lt;select class=`&quot;grey`&quot;&gt;
+    &lt;option&gt;--&lt;/option&gt;
+    &lt;option&gt;{2}&lt;/option&gt;
+    &lt;option&gt;{3}&lt;/option&gt;
+    &lt;option&gt;{4}&lt;/option&gt;
+    &lt;option&gt;{5}&lt;/option&gt;
+    &lt;option&gt;{6}&lt;/option&gt;
+    &lt;option&gt;{7}&lt;/option&gt;
+    &lt;option&gt;{8}&lt;/option&gt;
+    &lt;option&gt;{9}&lt;/option&gt;
+    &lt;option&gt;{10}&lt;/option&gt;
+    &lt;option&gt;{11}&lt;/option&gt;
+    &lt;option&gt;{12}&lt;/option&gt;
+    &lt;option&gt;{13}&lt;/option&gt;
+    &lt;option&gt;-- not needed --&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select class=`&quot;red`&quot;&gt;
+    &lt;option&gt;--&lt;/option&gt;
+    &lt;option&gt;{2}&lt;/option&gt;
+    &lt;option&gt;{3}&lt;/option&gt;
+    &lt;option&gt;{4}&lt;/option&gt;
+    &lt;option&gt;{5}&lt;/option&gt;
+    &lt;option&gt;{6}&lt;/option&gt;
+    &lt;option&gt;{7}&lt;/option&gt;
+    &lt;option&gt;{8}&lt;/option&gt;
+    &lt;option&gt;{9}&lt;/option&gt;
+    &lt;option&gt;{10}&lt;/option&gt;
+    &lt;option&gt;{11}&lt;/option&gt;
+    &lt;option&gt;{12}&lt;/option&gt;
+    &lt;option&gt;{13}&lt;/option&gt;
+    &lt;option&gt;-- not needed --&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select class=`&quot;green`&quot;&gt;
+    &lt;option&gt;--&lt;/option&gt;
+    &lt;option&gt;{2}&lt;/option&gt;
+    &lt;option&gt;{3}&lt;/option&gt;
+    &lt;option&gt;{4}&lt;/option&gt;
+    &lt;option&gt;{5}&lt;/option&gt;
+    &lt;option&gt;{6}&lt;/option&gt;
+    &lt;option&gt;{7}&lt;/option&gt;
+    &lt;option&gt;{8}&lt;/option&gt;
+    &lt;option&gt;{9}&lt;/option&gt;
+    &lt;option&gt;{10}&lt;/option&gt;
+    &lt;option&gt;{11}&lt;/option&gt;
+    &lt;option&gt;{12}&lt;/option&gt;
+    &lt;option&gt;{13}&lt;/option&gt;
+    &lt;option&gt;-- not needed --&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select class=`&quot;blue`&quot;&gt;
+    &lt;option&gt;--&lt;/option&gt;
+    &lt;option&gt;{2}&lt;/option&gt;
+    &lt;option&gt;{3}&lt;/option&gt;
+    &lt;option&gt;{4}&lt;/option&gt;
+    &lt;option&gt;{5}&lt;/option&gt;
+    &lt;option&gt;{6}&lt;/option&gt;
+    &lt;option&gt;{7}&lt;/option&gt;
+    &lt;option&gt;{8}&lt;/option&gt;
+    &lt;option&gt;{9}&lt;/option&gt;
+    &lt;option&gt;{10}&lt;/option&gt;
+    &lt;option&gt;{11}&lt;/option&gt;
+    &lt;option&gt;{12}&lt;/option&gt;
+    &lt;option&gt;{13}&lt;/option&gt;
+    &lt;option&gt;-- not needed --&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;textarea placeholder=`&quot;Notes...`&quot;&gt;&lt;/textarea&gt;
+  &lt;p&gt;
+    &lt;a href=`&quot;#contents`&quot;&gt;Back to level list&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+&quot; -f $mi,$mn,$l1,$l2,$l3,$l4,$l5,$l6,$l7,$l8,$l9,$la,$lb,$lc
+
+Clear-Host
+Set-Clipboard -Value $html</pre>
+		<p>Using the above script will prompt you for the level number, name, and your desired names of the 12 locations as they will appear in the select boxes. When you input these, it will copy an HTML snippet into your clipboard that you can then insert into your customized tracker page.</p>
+	</body>
+</html>
