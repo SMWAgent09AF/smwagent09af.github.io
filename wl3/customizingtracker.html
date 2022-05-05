@@ -1,26 +1,33 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Customizing the WL3 Location Organizer | SMWAgent09AF Plus</title>
+		<title>Customizing the WL3 Tracker | SMWAgent09AF Plus</title>
 		<style>
 			body {
 				background: #023;
 			}
 
-			h2,pre,p {
+			h2,h3,pre,p,code {
 				color: #fff;
 			}
 
 			a {
 				color: #4cf;
 			}
+			
+			pre, code {
+				border: 1px solid #fff;
+				background: #224;
+				user-select: all;
+			}
 		</style>
 	</head>
 	<body>
-		<h2>Customizing the <a href="tracker.html">WL3 Location Organizer</a></h2>
-		<p>The tracker is contained in a single .html file. All the styling should be contained within the &lt;style&gt; tag near the top of the file, in case you want to change colors, spacing, etc.</p>
+		<h2>Customizing the <a href="tracker.html">WL3 Tracker</a></h2>
+		<h3>Location tracker</h3>
+		<p>The location tracker is contained in a single .html file. All the styling should be contained within the <code>&lt;style&gt;</code> tag near the top of the file, in case you want to change colors, spacing, etc.</p>
 		<p>Regarding changing the key/coin location names: This will take more effort. It would have been smarter if I used some simple javascript to populate the select boxes with their options instead of having everything duplicated within a static file, but changing it would require some extra effort that seems unnecessary since the file works as-is. However, I will share the script I used to generate the level sections. It is the following Powershell script:</p>
-<pre style="border:1px solid #fff;background:#224;user-select:all;">$mi = Read-Host &quot;Map index (i.e. n1)&quot;
+<pre>$mi = Read-Host &quot;Map index (i.e. n1)&quot;
 $mn = Read-Host &quot;Level name (don't include map index)&quot;
 $l1 = Read-Host &quot;l1&quot;
 $l2 = Read-Host &quot;l2&quot;
@@ -57,7 +64,10 @@ $html = &quot;&lt;div id=`&quot;{0}`&quot;&gt;
     &lt;option&gt;7&lt;/option&gt;
   &lt;/select&gt;
   &lt;br /&gt;
-  &lt;input type=`&quot;checkbox`&quot; class=`&quot;checkgrey`&quot; /&gt;&lt;input type=`&quot;checkbox`&quot; class=`&quot;checkred`&quot; /&gt;&lt;input type=`&quot;checkbox`&quot; class=`&quot;checkgreen`&quot; /&gt;&lt;input type=`&quot;checkbox`&quot; class=`&quot;checkblue`&quot; /&gt;
+  &lt;input type=`&quot;checkbox`&quot; class=`&quot;checkgrey`&quot; /&gt;
+  &lt;input type=`&quot;checkbox`&quot; class=`&quot;checkred`&quot; /&gt;
+  &lt;input type=`&quot;checkbox`&quot; class=`&quot;checkgreen`&quot; /&gt;
+  &lt;input type=`&quot;checkbox`&quot; class=`&quot;checkblue`&quot; /&gt;
   &lt;br /&gt;
   &lt;select class=`&quot;grey`&quot;&gt;
     &lt;option&gt;--&lt;/option&gt;
@@ -133,5 +143,8 @@ $html = &quot;&lt;div id=`&quot;{0}`&quot;&gt;
 Clear-Host
 Set-Clipboard -Value $html</pre>
 		<p>Using the above script will prompt you for the level number, name, and your desired names of the 12 locations as they will appear in the select boxes. When you input these, it will copy an HTML snippet into your clipboard that you can then insert into your customized tracker page.</p>
+		<h3>Item tracker</h3>
+		<p>For the item tracker, I actually handled the page generation "properly". The function <code>generateItemTable()</code> is called when the document is loaded, with a "scale" parameter of 2 by default. This scale parameter affects how large the interface and icons are (valid scales are 1, 2, 4, and 8). The code in general should be readable enough as-is, so I won't go into detail. Basically, an html table is generated with 9 rows and 8 columns, each with inline styles ensuring that the icon is displayed properly. As with the location tracker, you can change the styling of the page as a whole by modifying the stylesheet contained in the <code>&lt;style&gt;</code> tag.</p>
+		<p>Note that I originally coded this specific tracker in mid-March and only made a cosmetic fix when I ported it over here. I am not aware of any bugs or issues with the functionality, but I can't guarantee that everything works. Unfortunately, there was some problem I had with the positioning of the icons that I didn't find a fix for, but it should look fine at the default scale.</p>
 	</body>
 </html>

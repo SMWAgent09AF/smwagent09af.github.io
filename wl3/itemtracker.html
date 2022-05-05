@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript">
+			const usefulItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 92];
+
+			function generateItemTable(scale) {
+			  var table = document.createElement('table');
+			  table.setAttribute('id', 'itemTable');
+			  table.setAttribute('scale', `${scale}`);
+			  document.getElementsByTagName('body')[0].prepend(table);
+
+			  for (i = 0; i < 9; i++) {
+				var row = document.createElement('tr');
+				row.setAttribute('id', `row${i}`);
+				document.getElementById('itemTable').appendChild(row);
+				for (j = 0; j < 8; j++) {
+				  let index = i * 8 + j;
+				  let cell = document.createElement('td');
+				  var xy = spriteTransform(usefulItems[index], scale);
+				  cell.setAttribute('id', `item${usefulItems[index]}`)
+				  cell.classList.add('inactive');
+				  cell.style.backgroundPosition = `${xy.x}px ${xy.y}px`;
+				  cell.addEventListener('click', function() {
+					cell.classList.toggle('inactive')
+				  });
+				  document.getElementById(`row${i}`).appendChild(cell);
+				}
+			  }
+			}
+
+			function spriteTest() {
+			  var i = document.getElementById('testInput').value;
+			  var xy = spriteTransform(i, 4);
+			  document.getElementById('testOutput').style.backgroundPosition = `${xy.x}px ${xy.y}px`;
+			}
+
+			function spriteTransform(index, scale) {
+			  var y = Math.floor(index / 10) * 16 * scale;
+			  var x = (index % 10) * 16 * scale;
+			  return {
+				'x': -x,
+				'y': -y
+			  }
+			}
+		</script>
+		<style>
+			td {
+			  border: 2px solid #000;
+			  border-radius: 5px;
+			  user-select: none;
+			  padding: 0;
+			  height: 32px;
+			  width: 32px;
+			  background-image: url('treasures8x.png');
+			  background-repeat: no-repeat;
+			  background-size: 320px 320px;
+			  background-position: 0px 0px;
+			  background-color: #aac;
+			  background-clip: content-box;
+			}
+
+			#itemTable[scale='1'] td {
+			  height: 16px;
+			  width: 16px;
+			  background-size: 160px 160px;
+			}
+
+			#itemTable[scale='2'] td {
+			  height: 32px;
+			  width: 32px;
+			  background-size: 320px 320px;
+			}
+
+			#itemTable[scale='4'] td {
+			  height: 64px;
+			  width: 64px;
+			  background-size: 640px 640px;
+			}
+
+			#itemTable[scale='8'] td {
+			  height: 128px;
+			  width: 128px;
+			  background-size: 1280px 1280px;
+			}
+
+			.inactive {
+			  filter: saturate(30%) brightness(60%);
+			  background-color: #555;
+			  border: 2px dotted #444;
+			}
+
+			#testOutput {
+			  display: block;
+			  height: 64px;
+			  width: 64px;
+			  background-image: url('treasures8x.png');
+			  background-repeat: no-repeat;
+			  background-size: 640px 640px;
+			  background-position: 0px 0px;
+			}
+		</style>
+	</head>
+	<body onload="generateItemTable(2)">
+	</body>
+</html>

@@ -1,95 +1,117 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Wario Land 3 Rando Location Organizer | SMWAgent09AF Plus</title>
+		<title>Wario Land 3 Randomizer Tracker | SMWAgent09AF Plus</title>
 		<style>
-			h2,
-			h3,
-			h4,
-			p,
-			li {
-			color: white;
-			}
-			a {
-			color: #4cf;
-			}
-			body {
-			background: #023;
-			}
 			* {
-			font-family: 'Arial', 'Helvetica', sans-serif;
+				font-family: 'Arial', 'Helvetica', sans-serif;
 			}
+			
+			h2, h3, h4, p, li, summary {
+				color: white;
+			}
+			
+			a {
+				color: #4cf;
+			}
+			
+			body {
+				background: #023;
+			}
+			
 			ul {
-			columns: 4em 4;
-			display: inline-block;
-			list-style-type: none;
-			padding-left: 10px;
+				columns: 4em 4;
+				display: inline-block;
+				list-style-type: none;
+				padding-left: 10px;
 			}
+			
 			div#north, div#south {
-			border: 1px ridge #000;
-			border-radius: 10px;
-			padding: 5px;
-			background: #3336;
+				border: 1px ridge #000;
+				border-radius: 10px;
+				padding: 5px;
+				background: #3336;
 			}
+			
 			div#west, div#east {
-			border: 1px ridge #000;
-			border-radius: 10px;
-			padding: 5px;
-			background: #0006;
+				border: 1px ridge #000;
+				border-radius: 10px;
+				padding: 5px;
+				background: #0006;
 			}
+			
+			#items {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				background-color: #113a;
+				padding: 10px;
+				border-radius: 20px 0 0 0;
+			}
+			
 			textarea {
-			height: 4em;
-			width: 16em;
-			display: block;
-			font-size: 1em;
-			background: #fff0;
-			color: #fff;
+				height: 4em;
+				width: 16em;
+				display: block;
+				font-size: 1em;
+				background: #fff0;
+				color: #fff;
 			}
+			
 			select {
-			background: #eddc;
+				background: #eddc;
 			}
+			
 			.grey {
-			border: 3px solid grey;
+				border: 3px solid grey;
 			}
+			
 			.red {
-			border: 3px solid red;
+				border: 3px solid red;
 			}
+			
 			.green {
-			border: 3px solid green;
+				border: 3px solid green;
 			}
+			
 			.blue {
-			border: 3px solid blue;
+				border: 3px solid blue;
 			}
+			
 			select.grey, select.red, select.green, select.blue {
-			width: 13em;
+				width: 13em;
 			}
+			
 			.checkgrey {
-			outline:2px ridge grey
+				outline:2px ridge grey;
 			}
+			
 			.checkred {
-			outline:2px ridge red
+				outline:2px ridge red;
 			}
+			
 			.checkgreen {
-			outline:2px ridge green
+				outline:2px ridge green;
 			}
+			
 			.checkblue {
-			outline:2px ridge blue
+				outline:2px ridge blue;
 			}
 		</style>
 	</head>
 	<body>
 		<p style="font-size:.8em;">back to <a href="/index.html">main page</a></p>
 		<h2 id="top">
-			Basic WL3 Rando Tracker (Location organizer)
+			Basic WL3 Rando Tracker
 		</h2>
 		<h4>
 			by SoapAgent
 		</h4>
 		<p>
-			This serves as a simple, barebones tracker for use with the <a href="https://github.com/AaronDobbe/wl3-randomizer" target="_blank">Wario Land 3 randomizer by AaronDobbe</a>, specifically for key shuffle (also includes a couple helpful tools for map shuffle). Everything is contained in this single HTML file, so you may download it and use it offline with ease. Read <a href="customizingtracker.html">here</a> for more information on how you can customize the tracker.
+			This serves as a simple, barebones tracker for use with the <a href="https://github.com/AaronDobbe/wl3-randomizer" target="_blank">Wario Land 3 randomizer by AaronDobbe</a>. The location tracker (main part of the page) is contained in one HTML file, the item tracker (iframe in the corner of the page) is contained in another HTML file located <a href="itemtracker.html">here</a>, and the treasure icons are combined into one image located <a href="treasures8x.png">here</a>, so if you want to use them offline you must download all three files. Note that the item tracker uses JavaScript. Read <a href="customizingtracker.html">here</a> for more information on how you can customize the tracker.
 		</p>
 		<p>
-			There is no scripting or other special tools to assist with logical decisions. Here are the features this page inclues:
+			Here are the features this page includes:
 		</p>
 		<ol>
 			<li>two checkboxes for every level entry in the contents to indicate accessibility and completion of the level</li>
@@ -97,14 +119,23 @@
 			<li>4 checkboxes for every level to indicate collection/absence of each chest</li>
 			<li>4 dropdowns for each level to indicate where each key is</li>
 			<li>a textbox for every level in case you want to note something about level requirements, remind yourself to come back, etc.</li>
+			<li>a tracker for all the useful items in the game, shown in the order given in the treasure menu (you may click on the text at the top to minimize/expand it)</li>
 		</ol>
 		<p>
-			<p>Each one of these features requires you to click on (or tab over and activate) an element on the page. Nothing is filled in automatically. <strong>Use as many or as few of these features as you like.</strong>
+			<p>There are no special tools to assist with logical decisions. Each one of these features requires you to click on (or tab over and activate) an element on the page. <strong>Use as many or as few of these features as you like.</strong>
 		</p>
 		<p>
 			Depending on how your browser/HTML renderer handles form elements, your input may or may not disappear if you navigate away from this page or refresh. I advise you to know how this works in advance, to avoid accidental clearing of any important information.
 		</p>
 		<hr />
+		<div id="items">
+			<details style="width: 300px;" open>
+				<summary>Item Tracker</summary>
+				<iframe src="itemtracker.html" height="360px">
+					<p>Item tracker goes here...</p>
+				</iframe>
+			</details>
+		</div>
 		<h3 id="contents">
 			Levels
 		</h3>
