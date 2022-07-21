@@ -11,15 +11,6 @@
 		<script type="text/javascript">
 			const SETTINGS = [{"name":"No junk items","section":"Items","bits":1,"options":["Off","On"]},{"name":"QoL Items starter kit","section":"Items","bits":1,"options":["Off","On"]},{"name":"Powerful start","section":"Items","bits":1,"options":["Off","On"]},{"name":"'Open Mode' starter kit","section":"Items","bits":1,"options":["Off","On"]},{"name":"Item placement difficulty","section":"Logic","bits":2,"options":["Easy","Normal","Hard","Hard + Minor Glitches"]},{"name":"Map shuffle","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Key shuffle","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Restrict music boxes","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Force axe start","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Shuffle golf","section":"Other","bits":1,"options":["Off","On"]},{"name":"Temple hints","section":"Other","bits":2,"options":["Unhelpful","Next item","Next quest item (strategic)"]},{"name":"Random BG palettes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Random object palettes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Random chest palettes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Skip cutscenes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Reveal secret paths","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Music shuffle","section":"Personal","bits":2,"options":["Off","On","Chaos"]}];
 
-			function buttonEvent() {
-				document.getElementById("shortInput").addEventListener("keypress", function(event) {
-				  if (event.key === "Enter") {
-					event.preventDefault();
-					document.getElementById("expandButton").click();
-				  }
-				});
-			}
-
 			function testParse(input, output) {
 				document.getElementById(`${output}`).innerHTML = expandSettings(Array.from(document.getElementById(`${input}`).value).slice(0,5));
 			}
@@ -106,9 +97,17 @@
 			  </h3>
 			  <label for="shortInput">Shorthand:</label>
 			  <input type="text" name="shortInput" id="shortInput">
-			  <button onload="buttonEvent()" onclick="testParse('shortInput','longOutput')" id="expandButton">
+			  <button onclick="testParse('shortInput','longOutput')" id="expandButton">
 				Submit
 			  </button>
+			  <script type="text/javascript">
+				document.getElementById("shortInput").addEventListener("keypress", function(event) {
+				  if (event.key === "Enter") {
+					event.preventDefault();
+					document.getElementById("expandButton").click();
+				  }
+				});
+			  </script>
 			  <pre id="longOutput"></pre>
 			</div>
 			<div id="compact">
