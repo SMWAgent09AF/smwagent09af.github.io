@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="SMWAgent09AF">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../styles.css">
+		<script type="text/javascript">
+			const SETTINGS = [{"name":"No junk items","section":"Items","bits":1,"options":["Off","On"]},{"name":"QoL Items starter kit","section":"Items","bits":1,"options":["Off","On"]},{"name":"Powerful start","section":"Items","bits":1,"options":["Off","On"]},{"name":"'Open Mode' starter kit","section":"Items","bits":1,"options":["Off","On"]},{"name":"Item placement difficulty","section":"Logic","bits":2,"options":["Easy","Normal","Hard","Hard + Minor Glitches"]},{"name":"Map shuffle","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Key shuffle","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Restrict music boxes","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Force axe start","section":"Logic","bits":1,"options":["Off","On"]},{"name":"Shuffle golf","section":"Other","bits":1,"options":["Off","On"]},{"name":"Temple hints","section":"Other","bits":2,"options":["Unhelpful","Next item","Next quest item (strategic)"]},{"name":"Random BG palettes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Random object palettes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Random chest palettes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Skip cutscenes","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Reveal secret paths","section":"Personal","bits":1,"options":["Off","On"]},{"name":"Music shuffle","section":"Personal","bits":2,"options":["Off","On","Chaos"]}];
+
+			document.getElementById("shortInput").addEventListener("keypress", function(event) {
+			  if (event.key === "Enter") {
+				event.preventDefault();
+				document.getElementById("expandButton").click();
+			  }
+			});
+
+			function testParse(input, output) {
+				document.getElementById(`${output}`).innerHTML = expandSettings(Array.from(document.getElementById(`${input}`).value).slice(0,5));
+			}
+
+			function expandSettings(inputArray) {
+			  if (inputArray.length < 5) {
+				return "invalid option string";
+			  }
+			  var outputString = `settings string ${inputArray.join("")} (`;
+			  for (let i = 0; i < 5; i++) {
+				inputArray[i] = hexToBinary(inputArray[i]);
+			  }
+			  const binString = inputArray.join("");
+			  outputString += `${binString.match(/.{1,4}/g).join(" ")})\n`
+			  var optArray = [];
+			  var k = 0;
+			  for (let j = 0; j < SETTINGS.length; j++) {
+				optArray.push(binaryToDecimal(binString.substring(k, k + SETTINGS[j].bits)));
+				k += SETTINGS[j].bits;
+			  }
+			  var tStr = "";
+			  for (let l = 0; l < optArray.length; l++) {
+				if (SETTINGS[l].options.length - 1 < optArray[l]) {
+					tStr = "Out of range";
+				} else {
+					tStr = SETTINGS[l].options[optArray[l]];
+				}
+				outputString += `${SETTINGS[l].section} | ${SETTINGS[l].name}: ${tStr}\n`;
+			  }
+			  return outputString
+			}
+
+			function compactSettings() {
+				const optArray = getSettingValues();
+			  var settingString = "";
+			  for (let i = 0; i < 17; i++) {
+				if (SETTINGS[i].bits > 1 && optArray[i] < 2) {
+					settingString += "0";
+				}
+				settingString += decimalToBinary(optArray[i]);
+			  }
+			  document.getElementById("shortInput").value = binaryToHex(settingString).padStart(5,"0").slice(-5);
+			}
+
+			function getSettingValues() {
+				var oa = [];
+			  for(let i = 0; i < 17; i++) {
+				oa.push(`${document.getElementById(`set${i}`).value}`);
+			  }
+			  return oa
+			}
+
+			function hexToBinary(hex) {
+				return (parseInt(hex, 16).toString(2)).padStart(4, '0');
+			}
+
+			function binaryToHex(bin) {
+				return (parseInt(bin, 2).toString(16));
+			}
+
+			function binaryToDecimal(bin) {
+				return (parseInt(bin, 2).toString(10));
+			}
+
+			function decimalToBinary(dec) {
+				return (parseInt(dec, 10).toString(2));
+			}
+		</script>
+	</head>
+	<body class="flex-container" onload="fillTop(['WL3 Randomizer setting expansion and contraction',''])">
+		<div class="flex body main">
+			<h3>
+			  Tool by SoapAgent
+			</h3>
+			<h4>
+			  for Wario Land 3 Randomizer by Aaron Dobbe, versions 0.11.0 to 0.11.3
+			</h4>
+			<p>
+			  Type a 5 digit hex string here to display the appropriate settings.
+			</p>
+			<div id="expand">
+			  <h3>
+			  Expand settings
+			  </h3>
+			  <label for="shortInput">Shorthand:</label>
+			  <input type="text" name="shortInput" id="shortInput">
+			  <button onclick="testParse('shortInput','longOutput')" id="expandButton">
+				Submit
+			  </button>
+			  <pre id="longOutput"></pre>
+			</div>
+			<div id="compact">
+			  <h3>
+			  Compact settings
+			  </h3>
+			  <p>
+				Input your settings using the form elements below to be converted into shorthand for later use. Note that this webpage has no integration with the actual randomizer; it is only for converting settings to a format that can be quickly recalled. Also note that if more settings are ever added, the format used here will need to change, and these changes will result in different shorthand strings. At that time, I may implement a way to convert to and from legacy formats or I may simply have a separate section for older versions.
+			  </p>
+			  <p class="section">Items</p>
+			  <label for="set0">No junk items</label>
+			  <select id="set0" name="set0">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set1">QoL Items starter kit</label>
+			  <select id="set1" name="set1">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set2">Powerful start</label>
+			  <select id="set2" name="set2">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set3">"Open Mode" starter kit</label>
+			  <select id="set3" name="set3">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <p class="section">Logic</p>
+			  <label for="set4">Item placement difficulty</label>
+			  <select id="set4" name="set4">
+				<option value="0">Easy</option>
+				<option value="1" selected>Normal</option>
+				<option value="2">Hard</option>
+				<option value="3">Hard + Minor Glitches</option>
+			  </select>
+			  <br />
+			  <label for="set5">Map shuffle</label>
+			  <select id="set5" name="set5">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set6">Key shuffle</label>
+			  <select id="set6" name="set6">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set7">Restrict music boxes</label>
+			  <select id="set7" name="set7">
+				<option value="0">Off</option>
+				<option value="1" selected>On</option>
+			  </select>
+			  <br />
+			  <label for="set8">Force axe start</label>
+			  <select id="set8" name="set8">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <p class="section">Other</p>
+			  <label for="set9">Shuffle golf</label>
+			  <select id="set9" name="set9">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set10">Temple hints</label>
+			  <select id="set10" name="set10">
+				<option value="0">Unhelpful</option>
+				<option value="1" selected>Next item</option>
+				<option value="2">Strategic</option>
+			  </select>
+			  <br />
+			  <p class="section">Personal</p>
+			  <label for="set11">Random BG palettes</label>
+			  <select id="set11" name="set11">
+				<option value="0">Off</option>
+				<option value="1" selected>On</option>
+			  </select>
+			  <br />
+			  <label for="set12">Random object palettes</label>
+			  <select id="set12" name="set12">
+				<option value="0">Off</option>
+				<option value="1" selected>On</option>
+			  </select>
+			  <br />
+			  <label for="set13">Random chest palettes</label>
+			  <select id="set13" name="set13">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set14">Skip cutscenes</label>
+			  <select id="set14" name="set14">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set15">Reveal secret paths</label>
+			  <select id="set15" name="set15">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			  </select>
+			  <br />
+			  <label for="set16">Music shuffle</label>
+			  <select id="set16" name="set16">
+				<option value="0">Off</option>
+				<option value="1" selected>On</option>
+				<option value="2">Chaos</option>
+			  </select>
+			  <br />
+			  <button onclick="compactSettings()">
+				Convert to string
+			  </button>
+			  <p>
+				Your settings will go in the above textbox in a hexadecimal shorthand format. Use the submit button (or type and press Enter) to recall settings from the corresponding shorthand.
+			  </p>
+			</div>
+			<h3>
+			  Changelog
+			</h3>
+			<pre id="changelog">
+			  2022/07/20 - First version; settings can be converted through a form into a string; this string can be converted back into settings in a separate text box.
+			</pre>
+		</div>
+		<footer class="flex footer main">
+			<p class="attr">© 2021</p>
+			<p class="aside">View the existing page at <a href="https://sites.google.com/site/smwagent09afplus" target="_blank">Google Sites</a></p>
+		</footer>
+	</body>
+</html>
