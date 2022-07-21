@@ -7,7 +7,7 @@ function fillTop(a) { // a == [Page title, ID to grey out on navbar]
 	wt.innerHTML = a[0] + ' | SMWAgent09AF Plus';
 	
 	// Insert top content (header + navbar), then make it match the current page
-	fetch('./nav.html')
+	fetch('/nav.html')
 	.then(res => res.text())
 	.then(text => {
 		let body = document.getElementsByTagName('body')[0]
