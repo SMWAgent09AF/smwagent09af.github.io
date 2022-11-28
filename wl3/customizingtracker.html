@@ -26,7 +26,7 @@
 	<body>
 		<h2>Customizing the <a href="tracker.html">WL3 Tracker</a></h2>
 		<h3>Location tracker</h3>
-		<p><strong>Notice:</strong> This page is no longer being maintained on Github. It will continue to be hosted here until further notice, but will not be edited. For the time being, I am hosting and updating it <a href="https://chargedgarlic.net/oldsite/wl3/customizingtracker.html">here</a>.</p>
+		<p style="color:#eba"><strong>Notice:</strong> This page is no longer being maintained on Github. It will continue to be hosted here until further notice, but will not be edited. For the time being, I am hosting and updating it <a href="https://chargedgarlic.net/oldsite/wl3/customizingtracker.html">here</a>.</p>
 		<p>The location tracker is contained in a single .html file. All the styling should be contained within the <code>&lt;style&gt;</code> tag near the top of the file, in case you want to change colors, spacing, etc.</p>
 		<p>Regarding changing the key/coin location names: This will take more effort. It would have been smarter if I used some simple javascript to populate the select boxes with their options instead of having everything duplicated within a static file, but changing it would require some extra effort that seems unnecessary since the file works as-is. However, I will share the script I used to generate the level sections. It is the following Powershell script:</p>
 <pre>$mi = Read-Host &quot;Map index (i.e. n1)&quot;
